@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface MenuItem {
   id: number;
@@ -58,9 +59,11 @@ export default function Header({
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-2">
               {logo ? (
-                <img 
+                <Image 
                   src={logo} 
                   alt={companyName}
+                  width={40}
+                  height={40}
                   className="h-8 lg:h-10 w-auto"
                 />
               ) : (

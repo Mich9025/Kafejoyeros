@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 interface Service {
   id: number;
   title: string;
@@ -129,9 +131,11 @@ export default function Services({
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
-                <img
+                <Image
                   src={service.image}
                   alt={service.title}
+                  width={400}
+                  height={192}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>

@@ -1,4 +1,14 @@
 // WordPress API Configuration
+
+// Interfaces para tipos específicos
+export interface WordPressMeta {
+  [key: string]: string | number | boolean | null;
+}
+
+export interface WordPressACF {
+  [key: string]: string | number | boolean | object | null;
+}
+
 export const WORDPRESS_CONFIG = {
   // Base URL de tu instalación de WordPress
   baseUrl: process.env.NEXT_PUBLIC_WORDPRESS_URL || 'http://localhost/wordpress',
@@ -56,10 +66,10 @@ export interface WordPressPost {
   sticky: boolean;
   template: string;
   format: string;
-  meta: any[];
+  meta: WordPressMeta[];
   categories: number[];
   tags: number[];
-  acf?: any; // Advanced Custom Fields
+  acf?: WordPressACF; // Advanced Custom Fields
 }
 
 export interface WordPressPage {
@@ -93,8 +103,8 @@ export interface WordPressPage {
   comment_status: string;
   ping_status: string;
   template: string;
-  meta: any[];
-  acf?: any;
+  meta: WordPressMeta[];
+  acf?: WordPressACF;
 }
 
 export interface WordPressMedia {
@@ -117,7 +127,7 @@ export interface WordPressMedia {
   comment_status: string;
   ping_status: string;
   template: string;
-  meta: any[];
+  meta: WordPressMeta[];
   description: {
     rendered: string;
   };
@@ -171,5 +181,5 @@ export interface WordPressMenuItem {
   classes: string[];
   xfn: string[];
   invalid: boolean;
-  meta: any[];
+  meta: WordPressMeta[];
 }

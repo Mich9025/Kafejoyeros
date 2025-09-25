@@ -128,7 +128,7 @@ export async function getMedia(params: {
 export async function getMenus(): Promise<WordPressMenu[]> {
   try {
     return await fetchWordPressAPI('/wp-json/wp-api-menus/v2/menus');
-  } catch (error) {
+  } catch {
     console.warn('Menu endpoint not available. Consider installing WP REST API Menus plugin.');
     return [];
   }
@@ -138,7 +138,7 @@ export async function getMenuBySlug(slug: string): Promise<WordPressMenu | null>
   try {
     const menu = await fetchWordPressAPI(`/wp-json/wp-api-menus/v2/menus/${slug}`);
     return menu;
-  } catch (error) {
+  } catch {
     console.warn('Menu endpoint not available. Consider installing WP REST API Menus plugin.');
     return null;
   }

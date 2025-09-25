@@ -48,8 +48,6 @@ export default function LocationMap({
     setIsVisible(true);
   }, []);
 
-  const mapUrl = `https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${encodeURIComponent(location.address)}&zoom=16&maptype=roadmap`;
-  
   // Fallback map URL for demo purposes
   const fallbackMapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.8234567890123!2d${location.coordinates.lng}!3d${location.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMzYnMzUuMCJOIDc0wrAwNCc1NC4xIlc!5e0!3m2!1ses!2sco!4v1234567890123!5m2!1ses!2sco`;
 
