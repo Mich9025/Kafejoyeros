@@ -113,7 +113,7 @@ export default function GoogleReviews({
         clearInterval(intervalRef.current);
       }
     };
-  }, [isAutoPlaying, reviews.length]);
+  }, [isAutoPlaying, reviews.length, reviewsPerView.desktop]);
 
   const nextReview = () => {
     setIsAutoPlaying(false);
@@ -255,7 +255,7 @@ export default function GoogleReviews({
 
                     {/* Review Text */}
                     <blockquote className="text-charcoal/80 font-sans leading-relaxed italic">
-                      "{review.text}"
+                      &ldquo;{review.text}&rdquo;
                     </blockquote>
 
                     {/* Google Badge */}
