@@ -140,7 +140,7 @@ export default function GoogleReviews({
     return Array.from({ length: 5 }, (_, index) => (
       <svg
         key={index}
-        className={`w-4 h-4 ${index < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
+        className={`w-4 h-4 ${index < rating ? 'text-gray-600 fill-current' : 'text-gray-300'}`}
         viewBox="0 0 24 24"
       >
         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -161,7 +161,7 @@ export default function GoogleReviews({
   };
 
   return (
-    <section id="reviews" className="py-20 bg-gradient-to-br from-white to-cream relative overflow-hidden">
+    <section id="reviews" className="py-20 bg-white relative overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 right-20 w-40 h-40 border border-gold/30 rounded-full"></div>
@@ -172,7 +172,7 @@ export default function GoogleReviews({
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className={`text-center mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-gradient-luxury mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
             {title}
           </h2>
           <div className="flex items-center justify-center mb-6">
@@ -180,7 +180,7 @@ export default function GoogleReviews({
             <div className="mx-4 w-2 h-2 border border-gold rotate-45"></div>
             <div className="h-px bg-gradient-to-r from-transparent via-gold to-transparent w-24"></div>
           </div>
-          <p className="text-charcoal/80 text-lg md:text-xl font-sans font-light max-w-2xl mx-auto mb-8">
+          <p className="text-gray-600 text-lg md:text-xl font-serif font-light max-w-2xl mx-auto mb-8">
             {subtitle}
           </p>
 

@@ -68,10 +68,10 @@ export default function Header({
                 />
               ) : (
                 <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm lg:text-base">K</span>
                   </div>
-                  <span className={`font-bold text-lg lg:text-xl ${
+                  <span className={`font-bold font-serif text-lg lg:text-xl ${
                     isScrolled ? 'text-gray-900' : 'text-white'
                   }`}>
                     {companyName}
@@ -87,7 +87,7 @@ export default function Header({
               <Link
                 key={item.id}
                 href={item.url}
-                className={`font-medium transition-colors duration-200 hover:text-amber-500 ${
+                className={`font-medium transition-colors duration-200 hover:text-gray-600 ${
                   isScrolled ? 'text-gray-700' : 'text-white'
                 }`}
               >
@@ -149,7 +149,7 @@ export default function Header({
                 <Link
                   key={item.id}
                   href={item.url}
-                  className="block px-3 py-2 text-gray-700 font-medium hover:text-amber-500 hover:bg-amber-50 rounded-md transition-colors duration-200"
+                  className="block px-3 py-2 text-gray-700 font-medium hover:text-gray-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.title}

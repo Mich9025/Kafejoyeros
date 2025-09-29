@@ -2,6 +2,46 @@
 
 import Image from 'next/image';
 
+const getServiceIcon = (iconType: string) => {
+  const iconProps = {
+    className: "w-6 h-6",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 2,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const
+  };
+
+  switch (iconType) {
+    case 'design':
+      return (
+        <svg {...iconProps} viewBox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+        </svg>
+      );
+    case 'repair':
+      return (
+        <svg {...iconProps} viewBox="0 0 24 24">
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+        </svg>
+      );
+    case 'gem':
+      return (
+        <svg {...iconProps} viewBox="0 0 24 24">
+          <path d="M6 3h12l4 6-10 12L2 9l4-6z" />
+          <path d="M11 3L8 9l4 12 4-12-3-6" />
+          <path d="M2 9h20" />
+        </svg>
+      );
+    default:
+      return (
+        <svg {...iconProps} viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" />
+        </svg>
+      );
+  }
+};
+
 interface Service {
   id: number;
   title: string;
@@ -26,7 +66,7 @@ export default function Services({
       id: 1,
       title: "Diseño Personalizado",
       description: "Creamos piezas únicas basadas en tus ideas y preferencias, desde el concepto inicial hasta la joya terminada.",
-      icon: "✏️",
+      icon: "design",
       image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       features: [
         "Consulta personalizada",
@@ -40,7 +80,7 @@ export default function Services({
       id: 2,
       title: "Reparación y Restauración",
       description: "Devolvemos la vida a tus joyas favoritas con técnicas especializadas y cuidado artesanal.",
-      icon: "🔧",
+      icon: "repair",
       image: "https://images.unsplash.com/photo-1611652022419-a9419f74343d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       features: [
         "Evaluación gratuita",
@@ -54,7 +94,7 @@ export default function Services({
       id: 3,
       title: "Engastado de Piedras",
       description: "Montamos tus gemas preciosas con la técnica y seguridad que merecen, realzando su belleza natural.",
-      icon: "💎",
+      icon: "gem",
       image: "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       features: [
         "Engaste de precisión",
@@ -63,48 +103,6 @@ export default function Services({
         "Garantía de seguridad"
       ],
       price: "Desde $200"
-    },
-    {
-      id: 4,
-      title: "Grabado Personalizado",
-      description: "Añade un toque personal a tus joyas con grabados únicos que harán cada pieza especial e irrepetible.",
-      icon: "📝",
-      image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      features: [
-        "Grabado láser",
-        "Diseños personalizados",
-        "Textos y símbolos",
-        "Acabado profesional"
-      ],
-      price: "Desde $30"
-    },
-    {
-      id: 5,
-      title: "Redimensionado",
-      description: "Ajustamos el tamaño de tus anillos y pulseras manteniendo la integridad y belleza del diseño original.",
-      icon: "📏",
-      image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      features: [
-        "Medición precisa",
-        "Conservación del diseño",
-        "Materiales originales",
-        "Acabado impecable"
-      ],
-      price: "Desde $40"
-    },
-    {
-      id: 6,
-      title: "Limpieza y Mantenimiento",
-      description: "Servicios de limpieza profesional y mantenimiento preventivo para mantener tus joyas como nuevas.",
-      icon: "✨",
-      image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      features: [
-        "Limpieza ultrasónica",
-        "Pulido profesional",
-        "Revisión general",
-        "Consejos de cuidado"
-      ],
-      price: "Desde $25"
     }
   ]
 }: ServicesProps) {
@@ -113,13 +111,13 @@ export default function Services({
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold font-serif text-gray-900 mb-4">
             {title}
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl font-serif text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {subtitle}
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto mt-6 rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-gray-700 to-gray-900 mx-auto mt-6 rounded-full"></div>
         </div>
 
         {/* Services Grid */}
@@ -127,7 +125,7 @@ export default function Services({
           {services.map((service) => (
             <div
               key={service.id}
-              className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-amber-200"
+              className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-gray-300"
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
@@ -139,11 +137,11 @@ export default function Services({
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div className="absolute top-4 left-4 text-3xl bg-white/90 backdrop-blur-sm rounded-full w-12 h-12 flex items-center justify-center">
-                  {service.icon}
+                <div className="absolute top-4 left-4 text-gray-800 w-12 h-12 flex items-center justify-center">
+                  {getServiceIcon(service.icon)}
                 </div>
                 {service.price && (
-                  <div className="absolute top-4 right-4 bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="absolute top-4 right-4 bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
                     {service.price}
                   </div>
                 )}
@@ -151,7 +149,7 @@ export default function Services({
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-amber-600 transition-colors duration-300">
+                <h3 className="text-xl font-bold font-serif text-gray-900 mb-3 group-hover:text-gray-700 transition-colors duration-300">
                   {service.title}
                 </h3>
                 
@@ -164,7 +162,7 @@ export default function Services({
                   {service.features.map((feature, index) => (
                     <li key={index} className="flex items-center text-sm text-gray-600">
                       <svg
-                        className="w-4 h-4 text-amber-500 mr-2 flex-shrink-0"
+                        className="w-4 h-4 text-gray-600 mr-2 flex-shrink-0"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
@@ -190,8 +188,8 @@ export default function Services({
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-gray-50 to-amber-50 rounded-2xl p-8 lg:p-12">
-            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+          <div className="bg-white border border-gray-100 rounded-2xl p-8 lg:p-12">
+            <h3 className="text-2xl lg:text-3xl font-bold font-serif text-gray-900 mb-4">
               ¿No encuentras lo que buscas?
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">

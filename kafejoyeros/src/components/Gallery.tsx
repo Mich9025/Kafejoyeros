@@ -102,7 +102,7 @@ export default function Gallery({
   };
 
   return (
-    <section id="galeria" className="py-20 bg-gradient-champagne relative overflow-hidden">
+    <section id="galeria" className="py-20 bg-white relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
         <div className="absolute top-20 left-10 w-64 h-64 border border-gold/20 rotate-45"></div>

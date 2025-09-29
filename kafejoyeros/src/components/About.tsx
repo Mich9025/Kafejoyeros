@@ -16,28 +16,72 @@ interface AboutProps {
   }>;
 }
 
+// Función para generar iconos SVG de línea
+const getFeatureIcon = (iconType: string) => {
+  const iconProps = {
+    className: "w-8 h-8",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.5",
+    viewBox: "0 0 24 24"
+  };
+
+  switch (iconType) {
+    case 'design':
+      return (
+        <svg {...iconProps}>
+          <path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+        </svg>
+      );
+    case 'diamond':
+      return (
+        <svg {...iconProps}>
+          <path d="M6 3h12l4 6-10 12L2 9l4-6z" />
+        </svg>
+      );
+    case 'craft':
+      return (
+        <svg {...iconProps}>
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+        </svg>
+      );
+    case 'quality':
+      return (
+        <svg {...iconProps}>
+          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      );
+    default:
+      return (
+        <svg {...iconProps}>
+          <circle cx="12" cy="12" r="10" />
+        </svg>
+      );
+  }
+};
+
 export default function About({
   title = "Nuestra Pasión por la Joyería",
   subtitle = "Tradición y Excelencia",
   description = "Con más de dos décadas de experiencia en el arte de la joyería, nos especializamos en crear piezas únicas que reflejan la personalidad y estilo de cada cliente. Nuestro compromiso con la calidad y la artesanía tradicional nos ha convertido en referentes en joyería artesanal.",
   features = [
     {
-      icon: "✨",
+      icon: "design",
       title: "Diseño Personalizado",
       description: "Cada pieza es diseñada exclusivamente según tus gustos y preferencias."
     },
     {
-      icon: "💎",
+      icon: "diamond",
       title: "Materiales Premium",
       description: "Utilizamos solo los mejores materiales: oro, plata y gemas certificadas."
     },
     {
-      icon: "🔨",
+      icon: "craft",
       title: "Artesanía Tradicional",
       description: "Técnicas ancestrales combinadas con herramientas modernas de precisión."
     },
     {
-      icon: "🏆",
+      icon: "quality",
       title: "Garantía de Calidad",
       description: "Cada joya viene con certificado de autenticidad y garantía extendida."
     }
@@ -51,17 +95,17 @@ export default function About({
   ]
 }: AboutProps) {
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
+    <section className="py-16 lg:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-gray-900 mb-4">
             {title}
           </h2>
-          <p className="text-xl text-amber-600 font-medium mb-6">
+          <p className="text-xl text-gray-700 font-medium font-serif mb-6">
             {subtitle}
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-gray-700 to-gray-900 mx-auto rounded-full"></div>
         </div>
 
         {/* Main Content */}
@@ -79,8 +123,8 @@ export default function About({
                   key={index}
                   className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
                 >
-                  <div className="text-3xl mb-3">{feature.icon}</div>
-                  <h3 className="font-semibold text-gray-900 mb-2">
+                  <div className="text-gray-700 mb-3">{getFeatureIcon(feature.icon)}</div>
+                  <h3 className="font-semibold font-serif text-gray-900 mb-2">
                     {feature.title}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
@@ -103,20 +147,20 @@ export default function About({
             </div>
             
             {/* Decorative Elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full opacity-20 animate-pulse"></div>
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full opacity-30 animate-pulse"></div>
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full opacity-20 animate-pulse"></div>
+            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full opacity-30 animate-pulse"></div>
           </div>
         </div>
 
         {/* Stats Section */}
-        <div className="bg-gradient-to-r from-amber-500 to-amber-600 rounded-2xl p-8 lg:p-12 text-white">
+        <div className="bg-white border border-gray-200 rounded-2xl p-8 lg:p-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold mb-2">
+                <div className="text-3xl lg:text-4xl font-bold font-serif text-gray-900 mb-2">
                   {stat.number}
                 </div>
-                <div className="text-amber-100 font-medium">
+                <div className="text-gray-600 font-medium font-serif">
                   {stat.label}
                 </div>
               </div>

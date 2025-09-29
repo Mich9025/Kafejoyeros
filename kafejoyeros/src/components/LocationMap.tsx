@@ -52,7 +52,7 @@ export default function LocationMap({
   const fallbackMapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.8234567890123!2d${location.coordinates.lng}!3d${location.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMzYnMzUuMCJOIDc0wrAwNCc1NC4xIlc!5e0!3m2!1ses!2sco!4v1234567890123!5m2!1ses!2sco`;
 
   return (
-    <section id="ubicacion" className="py-20 bg-gradient-to-br from-cream to-white relative overflow-hidden">
+    <section id="ubicacion" className="py-20 bg-white relative overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 w-48 h-48 border border-gold/20 rotate-45"></div>

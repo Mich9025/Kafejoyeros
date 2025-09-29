@@ -28,7 +28,7 @@ export default function InstagramGrid({
     {
       id: "1",
       image: "/api/placeholder/400/400",
-      caption: "Nueva colección de anillos de compromiso ✨ Cada pieza cuenta una historia única de amor eterno.",
+      caption: "Nueva colección de anillos de compromiso. Cada pieza cuenta una historia única de amor eterno.",
       likes: 245,
       comments: 18,
       date: "2024-01-15",
@@ -37,7 +37,7 @@ export default function InstagramGrid({
     {
       id: "2",
       image: "/api/placeholder/400/400",
-      caption: "Proceso artesanal de creación de un collar personalizado 🎨 De la idea al resultado final.",
+      caption: "Proceso artesanal de creación de un collar personalizado. De la idea al resultado final.",
       likes: 189,
       comments: 12,
       date: "2024-01-14",
@@ -46,7 +46,7 @@ export default function InstagramGrid({
     {
       id: "3",
       image: "/api/placeholder/400/400",
-      caption: "Aretes de esmeraldas colombianas 💚 La belleza natural en su máxima expresión.",
+      caption: "Aretes de esmeraldas colombianas. La belleza natural en su máxima expresión.",
       likes: 312,
       comments: 25,
       date: "2024-01-13",
@@ -55,7 +55,7 @@ export default function InstagramGrid({
     {
       id: "4",
       image: "/api/placeholder/400/400",
-      caption: "Detrás de escenas: nuestro taller de joyería ⚒️ Donde la magia cobra vida.",
+      caption: "Detrás de escenas: nuestro taller de joyería. Donde la magia cobra vida.",
       likes: 156,
       comments: 8,
       date: "2024-01-12",
@@ -64,7 +64,7 @@ export default function InstagramGrid({
     {
       id: "5",
       image: "/api/placeholder/400/400",
-      caption: "Pulsera de oro rosa con detalles únicos 🌹 Elegancia en cada detalle.",
+      caption: "Pulsera de oro rosa con detalles únicos. Elegancia en cada detalle.",
       likes: 278,
       comments: 21,
       date: "2024-01-11",
@@ -73,7 +73,7 @@ export default function InstagramGrid({
     {
       id: "6",
       image: "/api/placeholder/400/400",
-      caption: "Cliente feliz con su nueva joya personalizada 😊 Tu sonrisa es nuestra mayor recompensa.",
+      caption: "Cliente feliz con su nueva joya personalizada. Tu sonrisa es nuestra mayor recompensa.",
       likes: 423,
       comments: 34,
       date: "2024-01-10",
@@ -127,7 +127,7 @@ export default function InstagramGrid({
   };
 
   return (
-    <section id="instagram" className="py-20 bg-gradient-to-br from-cream to-white relative overflow-hidden">
+    <section id="instagram" className="py-20 bg-white relative overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 w-32 h-32 border border-gold rotate-45"></div>
