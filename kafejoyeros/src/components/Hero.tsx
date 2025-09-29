@@ -20,15 +20,15 @@ interface HeroProps {
 
 export default function Hero({
   title = "Kafe Joyeros",
-  subtitle = "Artesanía que Trasciende el Tiempo",
-  description = "Cada pieza cuenta una historia única. Descubre la elegancia en su forma más pura con nuestras creaciones artesanales que combinan tradición y vanguardia.",
+  subtitle = "Lujo consciente hecho a mano en Colombia.",
+  description = "Piezas atemporales que entrelazan historias con propósito y celebran la maestría artesanal.",
   backgroundImages = [
     "/api/placeholder/1920/1080",
     "/api/placeholder/1920/1080",
     "/api/placeholder/1920/1080"
   ],
   primaryCTA = { text: "Explorar Colección", href: "#galeria" },
-  secondaryCTA = { text: "Contactar Artesano", href: "#contacto" }
+  secondaryCTA = { text: "Contacta con nosotros", href: "#contacto" }
 }: HeroProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);

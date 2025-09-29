@@ -113,7 +113,7 @@ export default function Gallery({
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className={`text-center mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-gradient-luxury mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4">
             {title}
           </h2>
           <div className="flex items-center justify-center mb-6">

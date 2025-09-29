@@ -55,20 +55,20 @@ export default function LocationMap({
     <section id="ubicacion" className="py-20 bg-white relative overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 left-10 w-48 h-48 border border-gold/20 rotate-45"></div>
+        <div className="absolute top-10 left-10 w-48 h-48 border rotate-45"></div>
         <div className="absolute bottom-10 right-10 w-32 h-32 border border-champagne/30 rounded-full"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-gold/10 rotate-12"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64  rotate-12"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className={`text-center mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-gradient-luxury mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4">
             {title}
           </h2>
           <div className="flex items-center justify-center mb-6">
             <div className="h-px bg-gradient-to-r from-transparent via-gold to-transparent w-24"></div>
-            <div className="mx-4 w-2 h-2 border border-gold rotate-45"></div>
+            <div className="mx-4 w-2 h-2  rotate-45"></div>
             <div className="h-px bg-gradient-to-r from-transparent via-gold to-transparent w-24"></div>
           </div>
           <p className="text-charcoal/80 text-lg md:text-xl font-sans font-light max-w-2xl mx-auto">
@@ -79,14 +79,14 @@ export default function LocationMap({
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Location Information */}
           <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
-            <div className="bg-white/60 backdrop-filter backdrop-blur-lg rounded-3xl p-8 border border-gold/20 shadow-luxury">
+            <div className="bg-white/60 backdrop-filter backdrop-blur-lg rounded-3xl p-8  shadow-lg shadow-black/20">
               {/* Tabs */}
               <div className="flex mb-8 bg-champagne/30 rounded-2xl p-1">
                 <button
                   onClick={() => setActiveTab('info')}
                   className={`flex-1 py-3 px-4 rounded-xl font-sans font-medium transition-all duration-300 ${
                     activeTab === 'info'
-                      ? 'bg-white text-charcoal shadow-md'
+                      ? 'bg-white text-charcoal shadow-md shadow-black/20'
                       : 'text-charcoal/70 hover:text-charcoal'
                   }`}
                 >
@@ -96,7 +96,7 @@ export default function LocationMap({
                   onClick={() => setActiveTab('hours')}
                   className={`flex-1 py-3 px-4 rounded-xl font-sans font-medium transition-all duration-300 ${
                     activeTab === 'hours'
-                      ? 'bg-white text-charcoal shadow-md'
+                      ? 'bg-white text-charcoal shadow-md shadow-black/20'
                       : 'text-charcoal/70 hover:text-charcoal'
                   }`}
                 >
@@ -115,7 +115,7 @@ export default function LocationMap({
 
                   <div className="space-y-4">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-gradient-luxury rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 bg-[#101828] rounded-full flex items-center justify-center flex-shrink-0">
                         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -128,7 +128,7 @@ export default function LocationMap({
                     </div>
 
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-gradient-luxury rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 bg-[#101828] rounded-full flex items-center justify-center flex-shrink-0">
                         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                         </svg>
@@ -145,7 +145,7 @@ export default function LocationMap({
                     </div>
 
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-gradient-luxury rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 bg-[#101828] rounded-full flex items-center justify-center flex-shrink-0">
                         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
@@ -162,13 +162,13 @@ export default function LocationMap({
                     </div>
                   </div>
 
-                  <div className="pt-6 border-t border-gold/20">
+                  <div className="pt-6 border-t">
                     <div className="flex flex-col sm:flex-row gap-4">
                       <a
                         href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.address)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn-luxury px-6 py-3 text-white font-sans font-medium rounded-full shadow-luxury hover:shadow-luxury-hover transition-all duration-300 text-center"
+                        className="btn-luxury px-6 py-3 text-white font-sans font-medium rounded-full shadow-lg shadow-black/30 hover:shadow-xl hover:shadow-black/40 transition-all duration-300 text-center"
                       >
                         Ver en Google Maps
                       </a>
@@ -193,7 +193,7 @@ export default function LocationMap({
                   
                   <div className="space-y-4">
                     {Object.entries(location.hours).map(([day, hours]) => (
-                      <div key={day} className="flex justify-between items-center py-3 border-b border-gold/20 last:border-b-0">
+                      <div key={day} className="flex justify-between items-center py-3 border-b last:border-b-0">
                         <span className="font-sans font-medium text-charcoal">{day}</span>
                         <span className="font-sans text-charcoal/70">{hours}</span>
                       </div>
@@ -219,7 +219,7 @@ export default function LocationMap({
 
                   <a
                     href="#contacto"
-                    className="btn-luxury w-full py-4 text-white font-sans font-medium rounded-full shadow-luxury hover:shadow-luxury-hover transition-all duration-300 text-center block"
+                    className="btn-luxury w-full py-4 text-white font-sans font-medium rounded-full shadow-lg shadow-black/30 hover:shadow-xl hover:shadow-black/40 transition-all duration-300 text-center block"
                   >
                     Agendar Cita
                   </a>
@@ -230,7 +230,7 @@ export default function LocationMap({
 
           {/* Map */}
           <div className={`transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
-            <div className="bg-white/60 backdrop-filter backdrop-blur-lg rounded-3xl overflow-hidden border border-gold/20 shadow-luxury">
+            <div className="bg-white/60 backdrop-filter backdrop-blur-lg rounded-3xl overflow-hidden border shadow-lg shadow-black/20">
               <div className="aspect-video relative">
                 <iframe
                   src={fallbackMapUrl}
@@ -245,7 +245,7 @@ export default function LocationMap({
                 ></iframe>
                 
                 {/* Map Overlay */}
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-lg rounded-2xl px-4 py-3 shadow-lg">
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-lg rounded-2xl px-4 py-3 shadow-lg shadow-black/30">
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
                     <span className="font-sans font-medium text-charcoal text-sm">{location.name}</span>
@@ -279,13 +279,13 @@ export default function LocationMap({
 
         {/* Additional Info */}
         <div className={`mt-16 text-center transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <div className="bg-white/60 backdrop-filter backdrop-blur-lg rounded-3xl p-8 max-w-4xl mx-auto border border-gold/20">
+          <div className="bg-white/60 backdrop-filter backdrop-blur-lg rounded-3xl p-8 max-w-4xl mx-auto border">
             <h3 className="font-serif text-2xl md:text-3xl font-semibold text-charcoal mb-6">
               ¿Por qué visitarnos?
             </h3>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-luxury rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-[#101828] rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -297,7 +297,7 @@ export default function LocationMap({
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-luxury rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-[#101828] rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                   </svg>
@@ -308,7 +308,7 @@ export default function LocationMap({
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-luxury rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-[#101828] rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                   </svg>
