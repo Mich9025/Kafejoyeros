@@ -15,6 +15,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'yellowgreen-deer-888686.hostingersite.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };

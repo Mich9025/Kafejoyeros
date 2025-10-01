@@ -20,7 +20,7 @@ interface HeaderProps {
 export default function Header({ 
   menuItems = [], 
   logo, 
-  companyName = "Kafe Joyeros" 
+  companyName = "" 
 }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -62,12 +62,16 @@ export default function Header({
                 <Image 
                   src={logo} 
                   alt={companyName}
-                  width={40}
-                  height={40}
-                  className="h-8 lg:h-10 w-auto"
+                  width={250}
+                  height={250}
+                  className={`h-8 lg:h-10 w-auto transition-all duration-300 ${
+                    isScrolled ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+                  }`}
                 />
               ) : (
-                <div className="flex items-center space-x-2">
+                <div className={`flex items-center space-x-2 transition-all duration-300 ${
+                  isScrolled ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+                }`}>
                   <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm lg:text-base">K</span>
                   </div>
@@ -87,7 +91,7 @@ export default function Header({
               <Link
                 key={item.id}
                 href={item.url}
-                className={`font-medium transition-colors duration-200 hover:text-gray-600 ${
+                className={`font-medium font-tai-lue transition-colors duration-200 hover:text-gray-600 ${
                   isScrolled ? 'text-gray-700' : 'text-white'
                 }`}
               >
@@ -100,7 +104,7 @@ export default function Header({
           <div className="hidden lg:flex items-center space-x-4">
             <Link
               href="/contacto"
-              className="btn-luxury text-white px-6 py-2 rounded-full font-medium transition-all duration-200 shadow-luxury hover:shadow-luxury-hover"
+              className="bg-button font-tai-lue text-white px-6 py-2 rounded-full font-medium transition-all duration-200 shadow-luxury hover:shadow-luxury-hover"
             >
               Cotizar
             </Link>

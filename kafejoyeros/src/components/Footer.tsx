@@ -20,7 +20,7 @@ interface FooterProps {
 
 export default function Footer({
   companyName = "Kafe Joyeros",
-  description = "Creamos joyas únicas que cuentan tu historia. Más de 20 años de experiencia en joyería artesanal de alta calidad.",
+  description = "Piezas atemporales que entrelazan historias con propósito y celebran la maestría artesanal.",
   contactInfo = {
     address: "Calle Principal 123, Centro Histórico, Ciudad",
     phone: "+1 (555) 123-4567",

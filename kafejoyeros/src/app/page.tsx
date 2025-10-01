@@ -12,7 +12,7 @@ import Footer from '@/components/Footer';
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Header />
+      <Header logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-4-JPG-Photoroom.png"} />
       <Hero />
       <About />
       <Services />
@@ -20,7 +20,7 @@ export default function Home() {
       <InstagramGrid />
       <GoogleReviews />
       <LocationMap />
-      <Contact />
+      {/*<Contact />*/}
       <Footer />
     </main>
   );

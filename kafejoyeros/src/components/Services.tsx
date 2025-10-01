@@ -1,220 +1,217 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
-
-const getServiceIcon = (iconType: string) => {
-  const iconProps = {
-    className: "w-6 h-6",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: 2,
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const
-  };
-
-  switch (iconType) {
-    case 'design':
-      return (
-        <svg {...iconProps} viewBox="0 0 24 24">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-        </svg>
-      );
-    case 'repair':
-      return (
-        <svg {...iconProps} viewBox="0 0 24 24">
-          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-        </svg>
-      );
-    case 'gem':
-      return (
-        <svg {...iconProps} viewBox="0 0 24 24">
-          <path d="M6 3h12l4 6-10 12L2 9l4-6z" />
-          <path d="M11 3L8 9l4 12 4-12-3-6" />
-          <path d="M2 9h20" />
-        </svg>
-      );
-    default:
-      return (
-        <svg {...iconProps} viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="10" />
-        </svg>
-      );
-  }
-};
 
 interface Service {
   id: number;
   title: string;
   description: string;
-  icon: string;
   image: string;
-  features: string[];
-  price?: string;
+  link: string;
 }
 
 interface ServicesProps {
-  title?: string;
-  subtitle?: string;
   services?: Service[];
 }
 
 export default function Services({
-  title = "Nuestros Servicios",
-  subtitle = "Especialistas en cada detalle de tu joya perfecta",
   services = [
     {
       id: 1,
-      title: "Diseño Personalizado",
-      description: "Creamos piezas únicas basadas en tus ideas y preferencias, desde el concepto inicial hasta la joya terminada.",
-      icon: "design",
-      image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      features: [
-        "Consulta personalizada",
-        "Bocetos y renders 3D",
-        "Selección de materiales",
-        "Seguimiento del proceso"
-      ],
-      price: "Desde $500"
+      title: "Oro del cuál te sentirás orgulloso",
+      description: "Opta por piezas elaboradas con metales preciosos extraídos de manera responsable, apoya el crecimiento de mineros artesanales locales y sus familias, y recibe joyas con mayor trazabilidad y menor impacto medio ambiental.",
+      image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Copia-de-Batea-con-oro-Oro-Verde-c-Alejandro-Cock-295-scaled.png",
+      link: "/servicios/diseno-personalizado"
     },
     {
       id: 2,
-      title: "Reparación y Restauración",
-      description: "Devolvemos la vida a tus joyas favoritas con técnicas especializadas y cuidado artesanal.",
-      icon: "repair",
-      image: "https://images.unsplash.com/photo-1611652022419-a9419f74343d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      features: [
-        "Evaluación gratuita",
-        "Reparación de cadenas",
-        "Cambio de piedras",
-        "Pulido y acabados"
-      ],
-      price: "Desde $50"
+      title: "Hecho a la medida",
+      description: "Enaltecer el trabajo de nuestros artesanos preservando las técnicas heredadas por generaciones y velando porque el oficio perdure en el tiempo, es lo que da verdadero valor a cada una de nuestras piezas.",
+      image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/trabajo-artesanal.jpg",
+      link: "/servicios/reparacion"
     },
     {
       id: 3,
-      title: "Engastado de Piedras",
-      description: "Montamos tus gemas preciosas con la técnica y seguridad que merecen, realzando su belleza natural.",
-      icon: "gem",
-      image: "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      features: [
-        "Engaste de precisión",
-        "Certificación de gemas",
-        "Diseños exclusivos",
-        "Garantía de seguridad"
-      ],
-      price: "Desde $200"
+      title: "Ser joyero por un día.",
+      description: "Nuestros artesanos no solo trabajan el metal, preservan una tradición viva, cuidando cada detalle con autenticidad y respeto.",
+      image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/hecho-a-mano.jpg",
+      link: "/servicios/engastado"
+    },
+    {
+      id: 4,
+      title: "Hagamos juntos parte de una joyería regenerativa",
+      description: "Creemos que la joyería también puede sanar. Estamos comprometidos con darle un respiro al planeta y devolverle vida a los territorios que han sido impactados por la minería ilegal.",
+      image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/joyeria-regenerativa.png",
+      link: "/servicios/artesanal"
+    },
+    {
+      id: 5,
+      title: "Nuestro compromiso es hacer el tuyo inolvidable",
+      description: "Los anillos de boda son nuestra especialidad. Te acompañamos en un proceso íntimo y personalizado, desde la elección de los materiales hasta el diseño final de tu pieza, asegurándonos de que cada anillo refleje la historia, estilo y esencia de quien lo va a llevar.",
+      image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/compromiso-foto.jpg",
+      link: "/servicios/consultoria"
     }
   ]
 }: ServicesProps) {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Auto-play del carrusel
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % services.length);
+    }, 15000);
+
+    return () => clearInterval(timer);
+  }, [services.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % services.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + services.length) % services.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
   return (
-    <section className="py-16 lg:py-24 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold font-serif text-gray-900 mb-4">
-            {title}
-          </h2>
-          <p className="text-xl font-serif text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            {subtitle}
-          </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-gray-700 to-gray-900 mx-auto mt-6 rounded-full"></div>
-        </div>
+    <section className="relative h-[100vh] w-full overflow-hidden">
+      {/* Slides */}
+      {services.map((service, index) => (
+        <div
+          key={service.id}
+          className={`absolute inset-0 transition-opacity duration-1000 ${
+            index === currentSlide ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          {/* Imagen de fondo difuminada */}
+          <div className="absolute inset-0">
+            <Image
+              src={service.image}
+              alt={service.title}
+              fill
+              className="object-cover grayscale"
+              priority={index === 0}
+            />
+            <div className="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+          </div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-gray-300"
-            >
-              {/* Image */}
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  width={400}
-                  height={192}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div className="absolute top-4 left-4 text-gray-800 w-12 h-12 flex items-center justify-center">
-                  {getServiceIcon(service.icon)}
-                </div>
-                {service.price && (
-                  <div className="absolute top-4 right-4 bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    {service.price}
-                  </div>
-                )}
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold font-serif text-gray-900 mb-3 group-hover:text-gray-700 transition-colors duration-300">
+          {/* Contenido */}
+          <div className="relative h-[90vh] flex flex-col">
+            {/* Título centrado en la parte superior */}
+            <div className="pt-16 ">
+              <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 className="text-4xl lg:text-5xl font-title-tai-lue font-bold leading-tight text-white text-center uppercase">
                   {service.title}
-                </h3>
-                
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {service.description}
-                </p>
-
-                {/* Features */}
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((feature, index) => (
-                    <li key={index} className="flex items-center text-sm text-gray-600">
-                      <svg
-                        className="w-4 h-4 text-gray-600 mr-2 flex-shrink-0"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-
-                {/* CTA Button */}
-                <button className="w-full btn-luxury text-white py-3 rounded-lg font-semibold transition-all duration-300 shadow-luxury hover:shadow-luxury-hover">
-                  Solicitar Cotización
-                </button>
+                </h2>
               </div>
             </div>
+
+            {/* Contenido principal centrado */}
+            <div className="flex-1 flex items-center">
+              <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                  {/* Imagen principal */}
+                  <div className="relative">
+                    <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        width={400}
+                        height={500}
+                        className="w-full h-[60vh] object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                    </div>
+                  </div>
+
+                  {/* Contenido de texto */}
+                  <div className="text-white space-y-6">
+                    <div className="space-y-4">
+                      <p className="text-xl lg:text-2xl font-tai-lue leading-relaxed opacity-90">
+                        {service.description}
+                      </p>
+                    </div>
+
+                    {/* Botón */}
+                    <div className="pt-4">
+                      <a
+                        href={service.link}
+                        className="inline-flex items-center px-8 py-4 bg-button text-white font-semibold font-tai-lue rounded-full hover:bg-button-green transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                      >
+                        Conocer Más
+                        <svg
+                          className="ml-2 w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                             strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+
+      {/* Controles de navegación */}
+      <div className="absolute inset-y-0 left-4 flex items-center">
+        <button
+          onClick={prevSlide}
+          className="p-3 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+      </div>
+
+      <div className="absolute inset-y-0 right-4 flex items-center">
+        <button
+          onClick={nextSlide}
+          className="p-3 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Indicadores */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <div className="flex space-x-3">
+          {services.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentSlide
+                  ? 'bg-white scale-125'
+                  : 'bg-white/50 hover:bg-white/75'
+              }`}
+            />
           ))}
         </div>
+      </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="bg-white border border-gray-100 rounded-2xl p-8 lg:p-12">
-            <h3 className="text-2xl lg:text-3xl font-bold font-serif text-gray-900 mb-4">
-              ¿No encuentras lo que buscas?
-            </h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Contáctanos para servicios personalizados. Nuestro equipo de expertos está listo para ayudarte con cualquier proyecto especial.
-            </p>
-            <a
-              href="/contacto"
-              className="inline-flex items-center px-8 py-4 btn-luxury text-white font-semibold rounded-full transition-all duration-300 shadow-luxury hover:shadow-luxury-hover"
-            >
-              Contactar Especialista
-              <svg
-                className="ml-2 w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </a>
-          </div>
+      {/* Contador de slides */}
+      <div className="absolute top-8 right-8 text-white">
+        <div className="bg-black/30 backdrop-blur-sm rounded-full px-4 py-2">
+          <span className="font-tai-lue text-sm">
+            {currentSlide + 1} / {services.length}
+          </span>
         </div>
       </div>
     </section>

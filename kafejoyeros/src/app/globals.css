@@ -12,6 +12,7 @@
   --color-cream: #fffdd0;
   --font-serif: 'Playfair Display', serif;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-tai-lue: 'DM Sans', system-ui, -apple-system, sans-serif;
 }
 
 :root {
@@ -125,6 +126,17 @@ html {
   font-family: var(--font-sans);
 }
 
+.font-tai-lue {
+  font-family: var(--font-tai-lue);
+  letter-spacing: 0.025em;
+}
+
+.font-title-tai-lue {
+  font-family: var(--font-tai-lue);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
 .text-gradient-gold {
   background: linear-gradient(135deg, #d4af37, #f4e4a6, #b8941f);
   -webkit-background-clip: text;
@@ -149,6 +161,16 @@ html {
 
 .bg-gradient-champagne {
   background: linear-gradient(135deg, #f7e7ce, #fffdd0);
+}
+
+.bg-button {
+  background-color: #540031;
+}
+.bg-button-green {
+  background-color: #2c4026;
+}
+.bg-button-cream {
+  background-color: #F2e1d8;
 }
 
 .btn-luxury {
@@ -187,11 +209,18 @@ html {
   transition: all 0.4s ease;
 }
 
-.btn-outline-luxury:hover {
-  background: #d4af37;
-  color: white;
+.btn-outline-general {
+  border: 2px solid #F2e1d8;
+  background: transparent;
+  color: #F2e1d8;
+  transition: all 0.4s ease;
+}
+
+.btn-outline-general:hover {
+  background: #F2e1d8;
+  color: #540031;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 10px 25px rgba(242, 225, 216, 0.3);
 }
 
 .btn-luxury-outline {
