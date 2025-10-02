@@ -215,12 +215,18 @@ html {
   color: #F2e1d8;
   transition: all 0.4s ease;
 }
-
-.btn-outline-general:hover {
-  background: #F2e1d8;
+.btn-outline-red {
+  border: 2px solid #540031;
+  background: transparent;
   color: #540031;
+  transition: all 0.4s ease;
+}
+
+.btn-outline-red:hover {
+  background: #540031;
+  color: #F2e1d8;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(242, 225, 216, 0.3);
+  box-shadow: 0 10px 25px rgba(84, 0, 49, 0.3);
 }
 
 .btn-luxury-outline {
@@ -241,6 +247,13 @@ html {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(212, 175, 55, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-red {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid #540031;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 

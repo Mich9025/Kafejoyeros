@@ -30,7 +30,7 @@ export default function GoogleReviews({
     {
       id: "1",
       name: "María González",
-      avatar: "/api/placeholder/60/60",
+      avatar: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg",
       rating: 5,
       date: "2024-01-15",
       text: "Increíble experiencia. El anillo de compromiso que diseñaron para mí superó todas mis expectativas. La atención al detalle y la calidad son excepcionales. Definitivamente recomiendo Kafe Joyeros.",
@@ -39,7 +39,7 @@ export default function GoogleReviews({
     {
       id: "2",
       name: "Carlos Rodríguez",
-      avatar: "/api/placeholder/60/60",
+      avatar: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg",
       rating: 5,
       date: "2024-01-12",
       text: "Servicio personalizado de primera clase. Me ayudaron a crear un collar único para mi esposa y el resultado fue perfecto. El equipo es muy profesional y conocedor.",
@@ -48,7 +48,7 @@ export default function GoogleReviews({
     {
       id: "3",
       name: "Ana Martínez",
-      avatar: "/api/placeholder/60/60",
+      avatar: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg",
       rating: 5,
       date: "2024-01-10",
       text: "La mejor joyería de la ciudad. Compré unos aretes de esmeraldas y la calidad es impresionante. Además, el precio fue muy justo para la calidad recibida.",
@@ -57,7 +57,7 @@ export default function GoogleReviews({
     {
       id: "4",
       name: "Luis Fernández",
-      avatar: "/api/placeholder/60/60",
+      avatar: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg",
       rating: 4,
       date: "2024-01-08",
       text: "Excelente trabajo en la reparación de una joya familiar. Muy cuidadosos con las piezas antiguas y el resultado fue perfecto. Volveré sin duda.",
@@ -66,7 +66,7 @@ export default function GoogleReviews({
     {
       id: "5",
       name: "Isabella Torres",
-      avatar: "/api/placeholder/60/60",
+      avatar: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg",
       rating: 5,
       date: "2024-01-05",
       text: "Diseño personalizado increíble. Trabajaron conmigo para crear exactamente lo que tenía en mente. El proceso fue transparente y el resultado superó mis expectativas.",
@@ -75,7 +75,7 @@ export default function GoogleReviews({
     {
       id: "6",
       name: "Roberto Silva",
-      avatar: "/api/placeholder/60/60",
+      avatar: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg",
       rating: 5,
       date: "2024-01-03",
       text: "Atención excepcional y productos de alta calidad. Me asesoraron perfectamente para elegir el regalo ideal. Muy satisfecho con la compra.",
@@ -164,31 +164,31 @@ export default function GoogleReviews({
     <section id="reviews" className="py-20 bg-white relative overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 right-20 w-40 h-40 border border-gold/30 rounded-full"></div>
-        <div className="absolute bottom-20 left-20 w-32 h-32 border border-champagne/40 rotate-45"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-gold/20 rotate-12"></div>
+        <div className="absolute top-20 right-20 w-40 h-40 border border-[#510031] rounded-full"></div>
+        <div className="absolute bottom-20 left-20 w-32 h-32 border border-[#510031] rotate-45"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-[#510031] rotate-12"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className={`text-center mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+          <h2 className="uppercase font-title-tai-lue text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             {title}
           </h2>
           <div className="flex items-center justify-center mb-6">
-            <div className="h-px bg-gradient-to-r from-transparent via-gold to-transparent w-24"></div>
-            <div className="mx-4 w-2 h-2 border border-gold rotate-45"></div>
-            <div className="h-px bg-gradient-to-r from-transparent via-gold to-transparent w-24"></div>
+            <div className="h-px bg-gradient-to-r from-transparent via-button to-transparent w-24"></div>
+            <div className="mx-4 w-2 h-2 border border-button rotate-45"></div>
+            <div className="h-px bg-gradient-to-r from-transparent via-button to-transparent w-24"></div>
           </div>
-          <p className="text-gray-600 text-lg md:text-xl font-serif font-light max-w-2xl mx-auto mb-8">
+          <p className="text-gray-600 text-lg md:text-xl font-tai-lue font-light max-w-2xl mx-auto mb-8">
             {subtitle}
           </p>
 
           {/* Google Rating Summary */}
           <div className="flex items-center justify-center gap-6 mb-8">
-            <div className="flex items-center gap-3 bg-white/60 backdrop-blur-lg rounded-2xl px-6 py-4 border border-gold/20">
+            <div className="flex items-center gap-3 bg-white/60 backdrop-blur-lg rounded-2xl px-6 py-4 border border-[#510031]">
               <Image
-                src="/api/placeholder/40/40"
+                src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg"
                 alt="Google"
                 width={40}
                 height={40}
@@ -219,7 +219,7 @@ export default function GoogleReviews({
                   key={review.id}
                   className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3"
                 >
-                  <div className={`card-luxury rounded-2xl p-6 h-full transform transition-all duration-700 ${
+                  <div className={`card-red rounded-2xl p-6 h-full transform transition-all duration-700 ${
                     isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                   }`}
                   style={{ transitionDelay: `${index * 100 + 500}ms` }}
@@ -228,11 +228,11 @@ export default function GoogleReviews({
                     <div className="flex items-start gap-4 mb-4">
                       <div className="relative">
                         <Image
-                          src={review.avatar || "/api/placeholder/60/60"}
+                          src={review.avatar || "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg"}
                           alt={review.name}
                           width={60}
                           height={60}
-                          className="w-12 h-12 rounded-full object-cover border-2 border-gold/20"
+                          className="w-12 h-12 rounded-full object-cover border-2 border-[#510031]"
                         />
                         {review.verified && (
                           <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
@@ -259,7 +259,7 @@ export default function GoogleReviews({
                     </blockquote>
 
                     {/* Google Badge */}
-                    <div className="flex items-center justify-between mt-4 pt-4 border-t border-gold/20">
+                    <div className="flex items-center justify-between mt-4 pt-4 border-t border-[#510031]">
                       <div className="flex items-center gap-2">
                         <Image
                           src="/api/placeholder/20/20"
@@ -283,7 +283,7 @@ export default function GoogleReviews({
           {/* Navigation Arrows */}
           <button
             onClick={prevReview}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white/90 backdrop-blur-lg rounded-full shadow-luxury flex items-center justify-center text-charcoal hover:bg-white transition-all duration-300 hover:scale-110"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 w-12 h-12 bg-button/90 backdrop-blur-lg rounded-full shadow-lg flex items-center justify-center text-white hover:bg-button transition-all duration-300 hover:scale-110"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -291,7 +291,7 @@ export default function GoogleReviews({
           </button>
           <button
             onClick={nextReview}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 w-12 h-12 bg-white/90 backdrop-blur-lg rounded-full shadow-luxury flex items-center justify-center text-charcoal hover:bg-white transition-all duration-300 hover:scale-110"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 w-12 h-12 bg-button/90 backdrop-blur-lg rounded-full shadow-lg flex items-center justify-center text-white hover:bg-button transition-all duration-300 hover:scale-110"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -307,8 +307,8 @@ export default function GoogleReviews({
               onClick={() => goToReview(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 currentIndex === index 
-                  ? 'bg-gold shadow-lg' 
-                  : 'bg-gold/30 hover:bg-gold/50'
+                  ? 'bg-button shadow-lg' 
+                  : 'bg-button/30 hover:bg-button/50'
               }`}
             />
           ))}
@@ -316,17 +316,17 @@ export default function GoogleReviews({
 
         {/* CTA Section */}
         <div className={`text-center mt-16 transform transition-all duration-1000 delay-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <div className="bg-white/60 backdrop-filter backdrop-blur-lg rounded-3xl p-8 max-w-2xl mx-auto border border-gold/20">
-            <h3 className="font-serif text-2xl md:text-3xl font-semibold text-charcoal mb-4">
+          <div className="bg-white/60 backdrop-filter backdrop-blur-lg rounded-3xl p-8 max-w-2xl mx-auto border border-[#510031]">
+            <h3 className="font-title-tai-lue text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
               ¿Quieres ser el próximo cliente satisfecho?
             </h3>
-            <p className="text-charcoal/70 font-sans mb-6">
+            <p className="text-gray-700 font-tai-lue mb-6">
               Únete a más de {totalReviews} clientes que han confiado en nosotros para crear sus joyas especiales.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#contacto"
-                className="btn-luxury px-8 py-4 text-white font-sans font-medium rounded-full shadow-luxury hover:shadow-luxury-hover transition-all duration-300"
+                className="bg-button hover:bg-button-green px-8 py-4 text-white font-tai-lue font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Solicitar Consulta
               </a>
@@ -334,7 +334,7 @@ export default function GoogleReviews({
                 href="https://www.google.com/search?q=kafe+joyeros+reviews"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-luxury-outline px-8 py-4 font-sans font-medium rounded-full transition-all duration-300"
+                className="btn-outline-red text-button hover:bg-button hover:text-white px-8 py-4 font-tai-lue font-medium rounded-full transition-all duration-300"
               >
                 Ver todas las reseñas
               </a>

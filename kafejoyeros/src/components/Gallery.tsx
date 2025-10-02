@@ -18,8 +18,8 @@ interface GalleryProps {
 }
 
 export default function Gallery({
-  title = "GALERÍA",
-  subtitle = "Nuestras creaciones únicas"
+  title = "EDITORIAL",
+  subtitle = "Creemos firmemente que es posible hacer joyería de lujo con valores intangibles, con historias de esperanza, respeto por la tierra y admiración por quienes hacen parte del proceso. Cada una de nuestras piezas es una forma de transmitir lo que llamamos Lujo Consciente."
 }: GalleryProps) {
   const [images, setImages] = useState<WordPressImage[]>([]);
   const [loading, setLoading] = useState(true);
@@ -130,7 +130,7 @@ export default function Gallery({
             <h2 className="text-4xl md:text-5xl font-title-tai-lue text-[#171717] mb-4 uppercase">
               {title}
             </h2>
-            <p className="text-xl text-[#171717] font-tai-lue">
+            <p className="text-[#171717] font-tai-lue">
               {subtitle}
             </p>
           </div>

@@ -5,6 +5,7 @@ import Services from '@/components/Services';
 import Gallery from '@/components/Gallery';
 import InstagramGrid from '@/components/InstagramGrid';
 import GoogleReviews from '@/components/GoogleReviews';
+import Banner from '@/components/Banner';
 import LocationMap from '@/components/LocationMap';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -19,6 +20,9 @@ export default function Home() {
       <Gallery />
       <InstagramGrid />
       <GoogleReviews />
+      {/*banners*/}
+      <Banner />
+      
       <LocationMap />
       {/*<Contact />*/}
       <Footer />

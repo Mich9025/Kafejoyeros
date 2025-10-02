@@ -78,7 +78,20 @@ export default function Services({
   };
 
   return (
-    <section className="relative h-[100vh] w-full overflow-hidden">
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <h2 className="font-title-tai-lue text-4xl md:text-5xl font-bold text-gray-900 mb-6 uppercase">
+            Nuestros Servicios
+          </h2>
+          <p className="font-tai-lue text-gray-700 max-w-4xl mx-auto leading-relaxed">
+            Cada servicio está pensado para acompañarte desde la idea hasta la entrega final, con asesoría experta en materiales, diseño y carga emocional.
+          </p>
+        </div>
+
+        {/* Carousel Container */}
+        <div className="relative h-[80vh] max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl">
       {/* Slides */}
       {services.map((service, index) => (
         <div
@@ -96,24 +109,24 @@ export default function Services({
               className="object-cover grayscale"
               priority={index === 0}
             />
-            <div className="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+            <div className="absolute inset-0 bg-black/80 "></div>
           </div>
 
           {/* Contenido */}
-          <div className="relative h-[90vh] flex flex-col">
+          <div className="relative h-full flex flex-col">
             {/* Título centrado en la parte superior */}
-            <div className="pt-16 ">
-              <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-4xl lg:text-5xl font-title-tai-lue font-bold leading-tight text-white text-center uppercase">
+            <div className="pt-12 pb-6">
+              <div className="px-8">
+                <h3 className="text-3xl lg:text-4xl font-title-tai-lue font-bold leading-tight text-white text-center uppercase">
                   {service.title}
-                </h2>
+                </h3>
               </div>
             </div>
 
             {/* Contenido principal centrado */}
             <div className="flex-1 flex items-center">
-              <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="px-8 w-full">
+                <div className="grid lg:grid-cols-2 gap-8 items-center">
                   {/* Imagen principal */}
                   <div className="relative">
                     <div className="relative overflow-hidden rounded-2xl shadow-2xl">
@@ -121,8 +134,8 @@ export default function Services({
                         src={service.image}
                         alt={service.title}
                         width={400}
-                        height={500}
-                        className="w-full h-[60vh] object-cover"
+                        height={400}
+                        className="w-full h-[50vh] object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
@@ -131,7 +144,7 @@ export default function Services({
                   {/* Contenido de texto */}
                   <div className="text-white space-y-6">
                     <div className="space-y-4">
-                      <p className="text-xl lg:text-2xl font-tai-lue leading-relaxed opacity-90">
+                      <p className="text-lg lg:text-xl font-tai-lue leading-relaxed opacity-90">
                         {service.description}
                       </p>
                     </div>
@@ -166,52 +179,54 @@ export default function Services({
         </div>
       ))}
 
-      {/* Controles de navegación */}
-      <div className="absolute inset-y-0 left-4 flex items-center">
-        <button
-          onClick={prevSlide}
-          className="p-3 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-      </div>
-
-      <div className="absolute inset-y-0 right-4 flex items-center">
-        <button
-          onClick={nextSlide}
-          className="p-3 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-      </div>
-
-      {/* Indicadores */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div className="flex space-x-3">
-          {services.map((_, index) => (
+          {/* Controles de navegación */}
+          <div className="absolute inset-y-0 left-4 flex items-center">
             <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide
-                  ? 'bg-white scale-125'
-                  : 'bg-white/50 hover:bg-white/75'
-              }`}
-            />
-          ))}
-        </div>
-      </div>
+              onClick={prevSlide}
+              className="p-3 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+          </div>
 
-      {/* Contador de slides */}
-      <div className="absolute top-8 right-8 text-white">
-        <div className="bg-black/30 backdrop-blur-sm rounded-full px-4 py-2">
-          <span className="font-tai-lue text-sm">
-            {currentSlide + 1} / {services.length}
-          </span>
+          <div className="absolute inset-y-0 right-4 flex items-center">
+            <button
+              onClick={nextSlide}
+              className="p-3 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Indicadores */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+            <div className="flex space-x-3">
+              {services.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentSlide
+                      ? 'bg-white scale-125'
+                      : 'bg-white/50 hover:bg-white/75'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Contador de slides */}
+          <div className="absolute top-8 right-8 text-white">
+            <div className="bg-black/30 backdrop-blur-sm rounded-full px-4 py-2">
+              <span className="font-tai-lue text-sm">
+                {currentSlide + 1} / {services.length}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

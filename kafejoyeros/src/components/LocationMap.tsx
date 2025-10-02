@@ -63,41 +63,41 @@ export default function LocationMap({
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className={`text-center mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4">
+          <h2 className="uppercase font-title-tai-lue text-3xl md:text-4xl lg:text-5xl text-[#171717] mb-4">
             {title}
           </h2>
           <div className="flex items-center justify-center mb-6">
-            <div className="h-px bg-gradient-to-r from-transparent via-gold to-transparent w-24"></div>
-            <div className="mx-4 w-2 h-2  rotate-45"></div>
-            <div className="h-px bg-gradient-to-r from-transparent via-gold to-transparent w-24"></div>
+            <div className="h-px bg-gradient-to-r from-transparent via-button to-transparent w-24"></div>
+            <div className="mx-4 w-2 h-2 border border-button rotate-45"></div>
+            <div className="h-px bg-gradient-to-r from-transparent via-button to-transparent w-24"></div>
           </div>
-          <p className="text-charcoal/80 text-lg md:text-xl font-sans font-light max-w-2xl mx-auto">
+          <p className="text-gray-700 text-lg md:text-xl font-tai-lue font-light max-w-2xl mx-auto">
             {subtitle}
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
           {/* Location Information */}
-          <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
-            <div className="bg-white/60 backdrop-filter backdrop-blur-lg rounded-3xl p-8  shadow-lg shadow-black/20">
+          <div className={`h-full transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
+            <div className="bg-white/60 backdrop-filter backdrop-blur-lg rounded-3xl p-8 shadow-lg shadow-black/20 h-full flex flex-col">
               {/* Tabs */}
-              <div className="flex mb-8 bg-champagne/30 rounded-2xl p-1">
+              <div className="flex mb-8 bg-button/10 rounded-2xl p-1">
                 <button
                   onClick={() => setActiveTab('info')}
-                  className={`flex-1 py-3 px-4 rounded-xl font-sans font-medium transition-all duration-300 ${
+                  className={`flex-1 py-3 px-4 rounded-xl font-tai-lue font-medium transition-all duration-300 ${
                     activeTab === 'info'
-                      ? 'bg-white text-charcoal shadow-md shadow-black/20'
-                      : 'text-charcoal/70 hover:text-charcoal'
+                      ? 'bg-button text-white shadow-md'
+                      : 'text-gray-700 hover:text-gray-900'
                   }`}
                 >
                   Información
                 </button>
                 <button
                   onClick={() => setActiveTab('hours')}
-                  className={`flex-1 py-3 px-4 rounded-xl font-sans font-medium transition-all duration-300 ${
+                  className={`flex-1 py-3 px-4 rounded-xl font-tai-lue font-medium transition-all duration-300 ${
                     activeTab === 'hours'
-                      ? 'bg-white text-charcoal shadow-md shadow-black/20'
-                      : 'text-charcoal/70 hover:text-charcoal'
+                      ? 'bg-button text-white shadow-md'
+                      : 'text-gray-700 hover:text-gray-900'
                   }`}
                 >
                   Horarios
@@ -106,11 +106,11 @@ export default function LocationMap({
 
               {/* Tab Content */}
               {activeTab === 'info' && (
-                <div className="space-y-6">
+                <div className="space-y-6 flex-1 flex flex-col">
                   <div>
-                    <h3 className="font-serif text-2xl font-semibold text-charcoal mb-6">
+                    {/* <h3 className="font-serif text-2xl font-semibold text-charcoal mb-6">
                       {location.name}
-                    </h3>
+                    </h3> */}
                   </div>
 
                   <div className="space-y-4">
@@ -122,8 +122,8 @@ export default function LocationMap({
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-sans font-semibold text-charcoal mb-1">Dirección</h4>
-                        <p className="text-charcoal/70 font-sans leading-relaxed">{location.address}</p>
+                        <h4 className="font-title-tai-lue font-semibold text-charcoal mb-1">Dirección</h4>
+                        <p className="text-[#540031] font-title-tai-lue leading-relaxed">{location.address}</p>
                       </div>
                     </div>
 
@@ -134,10 +134,10 @@ export default function LocationMap({
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-sans font-semibold text-charcoal mb-1">Teléfono</h4>
+                        <h4 className="font-title-tai-lue font-semibold text-charcoal mb-1">Teléfono</h4>
                         <a 
                           href={`tel:${location.phone}`}
-                          className="text-gold hover:text-gold/80 font-sans transition-colors duration-300"
+                          className="text-[#540031] hover:text-[#540031]/80 font-title-tai-lue transition-colors duration-300"
                         >
                           {location.phone}
                         </a>
@@ -151,10 +151,10 @@ export default function LocationMap({
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-sans font-semibold text-charcoal mb-1">Email</h4>
+                        <h4 className="font-title-tai-lue font-semibold text-charcoal mb-1">Email</h4>
                         <a 
                           href={`mailto:${location.email}`}
-                          className="text-gold hover:text-gold/80 font-sans transition-colors duration-300"
+                          className="text-[#540031] hover:text-[#540031]/80 font-title-tai-lue transition-colors duration-300"
                         >
                           {location.email}
                         </a>
@@ -162,13 +162,13 @@ export default function LocationMap({
                     </div>
                   </div>
 
-                  <div className="pt-6 border-t">
+                  <div className="pt-6 border-t border-button/20">
                     <div className="flex flex-col sm:flex-row gap-4">
                       <a
                         href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.address)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn-luxury px-6 py-3 text-white font-sans font-medium rounded-full shadow-lg shadow-black/30 hover:shadow-xl hover:shadow-black/40 transition-all duration-300 text-center"
+                        className="bg-button hover:bg-button-green px-6 py-3 text-white font-tai-lue font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-center"
                       >
                         Ver en Google Maps
                       </a>
@@ -176,7 +176,7 @@ export default function LocationMap({
                         href={`https://waze.com/ul?q=${encodeURIComponent(location.address)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn-luxury-outline px-6 py-3 font-sans font-medium rounded-full transition-all duration-300 text-center"
+                        className="btn-outline-red text-button hover:bg-button hover:text-white px-6 py-3 font-tai-lue font-medium rounded-full transition-all duration-300 text-center"
                       >
                         Abrir en Waze
                       </a>
@@ -186,16 +186,16 @@ export default function LocationMap({
               )}
 
               {activeTab === 'hours' && (
-                <div className="space-y-6">
-                  <h3 className="font-serif text-2xl font-semibold text-charcoal">
+                <div className="space-y-6 flex-1 flex flex-col">
+                  <h3 className="font-serif text-2xl font-semibold font-title-tai-lue text-charcoal">
                     Horarios de Atención
                   </h3>
                   
                   <div className="space-y-4">
                     {Object.entries(location.hours).map(([day, hours]) => (
                       <div key={day} className="flex justify-between items-center py-3 border-b last:border-b-0">
-                        <span className="font-sans font-medium text-charcoal">{day}</span>
-                        <span className="font-sans text-charcoal/70">{hours}</span>
+                        <span className="font-title-tai-lue font-medium text-charcoal">{day}</span>
+                        <span className="font-title-tai-lue text-charcoal/70">{hours}</span>
                       </div>
                     ))}
                   </div>
@@ -208,8 +208,8 @@ export default function LocationMap({
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-sans font-semibold text-charcoal mb-2">Citas Recomendadas</h4>
-                        <p className="text-charcoal/70 font-sans text-sm leading-relaxed">
+                        <h4 className="font-title-tai-lue font-semibold text-charcoal mb-2">Citas Recomendadas</h4>
+                        <p className="text-charcoal/70 font-title-tai-lue text-sm leading-relaxed">
                           Para una atención personalizada y garantizar disponibilidad, te recomendamos agendar una cita previa. 
                           Así podremos dedicarte el tiempo necesario para crear la joya perfecta.
                         </p>
@@ -219,7 +219,7 @@ export default function LocationMap({
 
                   <a
                     href="#contacto"
-                    className="btn-luxury w-full py-4 text-white font-sans font-medium rounded-full shadow-lg shadow-black/30 hover:shadow-xl hover:shadow-black/40 transition-all duration-300 text-center block"
+                    className="bg-button hover:bg-button-green w-full py-4 text-white font-tai-lue font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-center block"
                   >
                     Agendar Cita
                   </a>
@@ -229,9 +229,9 @@ export default function LocationMap({
           </div>
 
           {/* Map */}
-          <div className={`transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
-            <div className="bg-white/60 backdrop-filter backdrop-blur-lg rounded-3xl overflow-hidden border shadow-lg shadow-black/20">
-              <div className="aspect-video relative">
+          <div className={`h-full transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
+            <div className="bg-white/60 backdrop-filter backdrop-blur-lg rounded-3xl overflow-hidden border shadow-lg shadow-black/20 h-full flex flex-col">
+              <div className="flex-1 relative">
                 <iframe
                   src={fallbackMapUrl}
                   width="100%"
@@ -240,7 +240,7 @@ export default function LocationMap({
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="rounded-t-3xl"
+                  className="rounded-t-3xl w-full h-full"
                   title={`Mapa de ${location.name}`}
                 ></iframe>
                 
@@ -248,7 +248,7 @@ export default function LocationMap({
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-lg rounded-2xl px-4 py-3 shadow-lg shadow-black/30">
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                    <span className="font-sans font-medium text-charcoal text-sm">{location.name}</span>
+                    <span className="font-title-tai-lue font-medium text-charcoal text-sm">{location.name}</span>
                   </div>
                 </div>
               </div>
@@ -259,7 +259,7 @@ export default function LocationMap({
                     <h4 className="font-serif text-lg font-semibold text-charcoal mb-1">
                       {location.name}
                     </h4>
-                    <p className="text-charcoal/70 font-sans text-sm">
+                    <p className="text-[#540031] font-sans text-sm">
                       {location.address}
                     </p>
                   </div>
@@ -267,7 +267,7 @@ export default function LocationMap({
                     href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(location.address)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-luxury-outline px-4 py-2 font-sans font-medium rounded-full text-sm transition-all duration-300"
+                    className="btn-outline-red hover:bg-button hover:text-white px-2 py-2 font-title-tai-lue  rounded-full text-sm transition-all duration-300"
                   >
                     Cómo llegar
                   </a>
@@ -277,7 +277,7 @@ export default function LocationMap({
           </div>
         </div>
 
-        {/* Additional Info */}
+        {/* Additional Info
         <div className={`mt-16 text-center transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <div className="bg-white/60 backdrop-filter backdrop-blur-lg rounded-3xl p-8 max-w-4xl mx-auto border">
             <h3 className="font-serif text-2xl md:text-3xl font-semibold text-charcoal mb-6">
@@ -292,7 +292,7 @@ export default function LocationMap({
                   </svg>
                 </div>
                 <h4 className="font-serif text-lg font-semibold text-charcoal mb-2">Ver y Tocar</h4>
-                <p className="text-charcoal/70 font-sans text-sm">
+                <p className="text-charcoal/70 font-title-tai-lue text-sm">
                   Experimenta la calidad y belleza de nuestras joyas en persona
                 </p>
               </div>
@@ -303,7 +303,7 @@ export default function LocationMap({
                   </svg>
                 </div>
                 <h4 className="font-serif text-lg font-semibold text-charcoal mb-2">Asesoría Personalizada</h4>
-                <p className="text-charcoal/70 font-sans text-sm">
+                <p className="text-charcoal/70 font-title-tai-lue text-sm">
                   Recibe consejos expertos para encontrar o crear la joya perfecta
                 </p>
               </div>
@@ -314,13 +314,13 @@ export default function LocationMap({
                   </svg>
                 </div>
                 <h4 className="font-serif text-lg font-semibold text-charcoal mb-2">Taller Artesanal</h4>
-                <p className="text-charcoal/70 font-sans text-sm">
+                <p className="text-charcoal/70 font-title-tai-lue text-sm">
                   Conoce nuestro proceso de creación y la pasión detrás de cada pieza
                 </p>
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
