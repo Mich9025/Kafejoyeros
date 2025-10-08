@@ -19,6 +19,9 @@
   --background: #ffffff;
   --foreground: #171717;
   --gold: #d4af37;
+  --red: #540031;
+  --cream: #F2E1D280;
+  --green: #2c4026;
   --gold-light: #f4e4a6;
   --gold-dark: #b8941f;
   --gray-dark: #2d2d2d;
@@ -52,12 +55,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--gold);
+  background: var(--red);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--gold-dark);
+  background: var(--green);
 }
 
 @keyframes fadeInUp {

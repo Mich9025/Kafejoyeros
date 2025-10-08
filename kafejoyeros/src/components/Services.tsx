@@ -106,10 +106,10 @@ export default function Services({
               src={service.image}
               alt={service.title}
               fill
-              className="object-cover grayscale"
+              className="object-cover grayscale opacity-25"
               priority={index === 0}
             />
-            <div className="absolute inset-0 bg-black/80 "></div>
+            <div className="absolute inset-0 bg-black/10 "></div>
           </div>
 
           {/* Contenido */}

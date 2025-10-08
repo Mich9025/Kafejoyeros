@@ -15,12 +15,14 @@ interface HeaderProps {
   menuItems?: MenuItem[];
   logo?: string;
   companyName?: string;
+  darkBackground?: boolean;
 }
 
 export default function Header({ 
   menuItems = [], 
   logo, 
-  companyName = "" 
+  companyName = "",
+  darkBackground = false
 }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,7 +40,7 @@ export default function Header({
     { id: 1, title: 'Inicio', url: '/' },
     { id: 2, title: 'Nosotros', url: '/nosotros' },
     { id: 3, title: 'Servicios', url: '/servicios' },
-    { id: 4, title: 'Galería', url: '/galeria' },
+    // { id: 4, title: 'Galería', url: '/galeria' },
     { id: 5, title: 'Blog', url: '/blog' },
     { id: 6, title: 'Contacto', url: '/contacto' },
   ];
@@ -48,9 +50,11 @@ export default function Header({
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-lg' 
-          : 'bg-transparent'
+        darkBackground
+          ? 'bg-[#171717] backdrop-blur-md shadow-lg'
+          : isScrolled 
+            ? 'bg-white/95 backdrop-blur-md shadow-lg' 
+            : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,7 +80,7 @@ export default function Header({
                     <span className="text-white font-bold text-sm lg:text-base">K</span>
                   </div>
                   <span className={`font-bold font-serif text-lg lg:text-xl ${
-                    isScrolled ? 'text-gray-900' : 'text-white'
+                    darkBackground ? 'text-white' : isScrolled ? 'text-gray-900' : 'text-white'
                   }`}>
                     {companyName}
                   </span>
@@ -91,8 +95,8 @@ export default function Header({
               <Link
                 key={item.id}
                 href={item.url}
-                className={`font-medium font-tai-lue transition-colors duration-200 hover:text-gray-600 ${
-                  isScrolled ? 'text-gray-700' : 'text-white'
+                className={`font-medium font-tai-lue transition-colors duration-200 hover:text-gray-300 ${
+                  darkBackground ? 'text-white' : isScrolled ? 'text-gray-700' : 'text-white'
                 }`}
               >
                 {item.title}
@@ -115,7 +119,7 @@ export default function Header({
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`p-2 rounded-md transition-colors duration-200 ${
-                isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'
+                darkBackground ? 'text-white hover:bg-white/10' : isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'
               }`}
               aria-label="Abrir menú"
             >
