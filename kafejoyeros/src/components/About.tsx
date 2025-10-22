@@ -61,7 +61,7 @@ export default function About({
     {
       icon: "conscious",
       title: "Lujo Consciente",
-      description: "Cada pieza está impregnada de valores positivos, con un impacto social y ambiental sostenible."
+      description: "Cada pieza está impregnada de valores positivos, con un impacto social y medio ambiental responsable."
     },
     {
       icon: "traceability", 
@@ -105,13 +105,13 @@ export default function About({
         <div className="max-w-4xl mx-auto text-center mb-16">
           <p className="text-lg text-gray-700 leading-relaxed mb-8 font-tai-lue">
             Kafé Joyeros nace en 2017 con el propósito de re interpretar la joyería tradicional, 
-            romper con el estatu quo de una industria distante y crear una nueva forma de vivir el lujo, 
+            romper con el estatus quo de una industria distante y crear una nueva forma de vivir el lujo, 
             <span className="font-semibold text-gray-900"> un lujo consciente, humano y conectado.</span>
           </p>
           
           <p className="text-lg text-gray-700 leading-relaxed font-tai-lue">
             Nuestro enfoque va más allá del objeto, buscamos que cada pieza esté impregnada de valores positivos, 
-            con un impacto social y ambiental sostenible. Creemos que la joyería también puede ser un acto de conciencia 
+            con un impacto social y medio ambiental responsable. Creemos que la joyería también puede ser un acto de conciencia 
             y queremos que cada cliente pueda conectar con la historia de su joya.
           </p>
         </div>       
@@ -233,7 +233,7 @@ export default function About({
               <p className="text-gray-600 font-tai-lue text-sm max-w-md">
                 Descubre el proceso completo de co-creación y cómo cada pieza cuenta una historia única
               </p>
-              <div className="mt-3 flex items-center justify-center space-x-2 text-button">
+              <div className="mt-3 flex items-center text-gray-600 justify-center space-x-2 text-button">
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -247,7 +247,10 @@ export default function About({
                     d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
                   />
                 </svg>
-                <span className="text-sm font-medium">Ver Video</span>
+                <div 
+                  onClick={() => setIsVideoModalOpen(true)}
+                  className="relative cursor-pointer group"
+                > <span className="text-sm font-title-tai-lue text-gray-600 font-medium">Ver Video</span></div>               
               </div>
             </div>
           </div>

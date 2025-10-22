@@ -2,12 +2,9 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Services from '@/components/Services';
-import Gallery from '@/components/Gallery';
 import InstagramGrid from '@/components/InstagramGrid';
 import GoogleReviews from '@/components/GoogleReviews';
 import Banner from '@/components/Banner';
-import LocationMap from '@/components/LocationMap';
-import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -17,13 +14,12 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
-      <Gallery />
+      {/* <Gallery /> */}
       <InstagramGrid />
       <GoogleReviews />
       {/*banners*/}
-      <Banner />
-      
-      <LocationMap />
+      <Banner />      
+      {/* <LocationMap /> */}
       {/*<Contact />*/}
       <Footer logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-1-JPG-Photoroom.png"} />
     </main>

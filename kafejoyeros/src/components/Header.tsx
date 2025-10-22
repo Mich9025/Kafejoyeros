@@ -40,7 +40,7 @@ export default function Header({
     { id: 1, title: 'Inicio', url: '/' },
     { id: 2, title: 'Nosotros', url: '/nosotros' },
     { id: 3, title: 'Servicios', url: '/servicios' },
-    // { id: 4, title: 'Galería', url: '/galeria' },
+    { id: 4, title: 'Editorial', url: '/editorial' },
     { id: 5, title: 'Blog', url: '/blog' },
     { id: 6, title: 'Contacto', url: '/contacto' },
   ];
@@ -110,7 +110,7 @@ export default function Header({
               href="/contacto"
               className="bg-button font-tai-lue text-white px-6 py-2 rounded-full font-medium transition-all duration-200 shadow-luxury hover:shadow-luxury-hover"
             >
-              Cotizar
+              Agendar Cita
             </Link>
           </div>
 

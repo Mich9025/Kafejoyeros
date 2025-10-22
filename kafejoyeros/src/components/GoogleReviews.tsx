@@ -320,9 +320,9 @@ export default function GoogleReviews({
             <h3 className="font-title-tai-lue text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
               ¿Quieres ser el próximo cliente satisfecho?
             </h3>
-            <p className="text-gray-700 font-tai-lue mb-6">
+            {/* <p className="text-gray-700 font-tai-lue mb-6">
               Únete a más de {totalReviews} clientes que han confiado en nosotros para crear sus joyas especiales.
-            </p>
+            </p> */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#contacto"

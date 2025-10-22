@@ -67,10 +67,42 @@ export default function Hero({
         <div className="absolute inset-0 bg-gradient-to-br from-[#2c4026] via-[#171717]/20 to-[#2c4026]"></div>
         
         {/* Decorative Elements */}
-        <div className="absolute top-20 left-20 w-32 h-32 border border-[#b0b0b0] rotate-45 animate-float"></div>
-        <div className="absolute bottom-32 right-32 w-24 h-24 border border-champagne/40 rotate-12 animate-float" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-1/2 left-10 w-2 h-20 bg-gradient-to-b from-[#b0b0b0] to-transparent opacity-60"></div>
-        <div className="absolute top-1/3 right-16 w-1 h-32 bg-gradient-to-b from-[#b0b0b0] to-transparent opacity-40"></div>
+        <div className="absolute top-20 left-20 w-32 h-32 animate-float">
+          <Image 
+            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/GranitoCafe.svg" 
+            alt="Decorative element" 
+            fill
+            className="w-full h-full object-contain opacity-60 filter brightness-110"
+            style={{filter: 'sepia(100%) hue-rotate(15deg) brightness(3.5)'}}
+          />
+        </div>
+        <div className="absolute bottom-32 right-32 w-24 h-24 animate-float" style={{animationDelay: '1s'}}>
+          <Image
+            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/GranitoCafe.svg" 
+            alt="Decorative element" 
+            fill
+            className="w-full h-full object-contain opacity-40 rotate-12"
+            style={{filter: 'sepia(30%) hue-rotate(25deg) brightness(2.5)'}}
+          />
+        </div>
+        <div className="absolute top-1/2 left-10 w-16 h-20 animate-float" style={{animationDelay: '0.5s'}}>
+          <Image 
+            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/GranitoCafe.svg" 
+            alt="Decorative element" 
+            fill
+            className="w-full h-full object-contain opacity-50"
+            style={{filter: 'sepia(30%) hue-rotate(20deg) brightness(2.5)'}}
+          />
+        </div>
+        <div className="absolute top-1/3 right-16 w-12 h-32 animate-float" style={{animationDelay: '1.5s'}}>
+          <Image 
+            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/GranitoCafe.svg" 
+            alt="Decorative element" 
+            fill
+            className="w-full h-full object-contain opacity-40"
+            style={{filter: 'sepia(30%) hue-rotate(10deg) brightness(2.5)'}}
+          />
+        </div>
       </div>
 
       {/* Main Content */}
@@ -126,7 +158,7 @@ export default function Hero({
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
         <div className="flex flex-col items-center text-champagne/70">
-          <span className="text-sm font-tai-lue tracking-wider uppercase mb-2">Descubrir</span>
+          <span className="text-sm font-tai-lue tracking-wider uppercase mb-2">Desliza para continuar</span>
           <div className="w-px h-12 bg-gradient-to-b from-[#F2E1D8] to-transparent"></div>
           <div className="w-2 h-2 border border-[#F2E1D8] rotate-45 mt-2"></div>
         </div>

@@ -79,24 +79,24 @@ export default function InstagramGrid({
       date: "2024-01-10",
       link: "https://instagram.com/p/example6"
     },
-    {
-      id: "7",
-      image: "/api/placeholder/400/400",
-      caption: "Colección vintage: anillos con historia 📿 Piezas que trascienden el tiempo.",
-      likes: 198,
-      comments: 15,
-      date: "2024-01-09",
-      link: "https://instagram.com/p/example7"
-    },
-    {
-      id: "8",
-      image: "/api/placeholder/400/400",
-      caption: "Nuevo diseño de collar con perlas naturales 🤍 Sofisticación y naturaleza en armonía.",
-      likes: 267,
-      comments: 19,
-      date: "2024-01-08",
-      link: "https://instagram.com/p/example8"
-    }
+    // {
+    //   id: "7",
+    //   image: "/api/placeholder/400/400",
+    //   caption: "Colección vintage: anillos con historia 📿 Piezas que trascienden el tiempo.",
+    //   likes: 198,
+    //   comments: 15,
+    //   date: "2024-01-09",
+    //   link: "https://instagram.com/p/example7"
+    // },
+    // {
+    //   id: "8",
+    //   image: "/api/placeholder/400/400",
+    //   caption: "Nuevo diseño de collar con perlas naturales 🤍 Sofisticación y naturaleza en armonía.",
+    //   likes: 267,
+    //   comments: 19,
+    //   date: "2024-01-08",
+    //   link: "https://instagram.com/p/example8"
+    // }
   ]
 }: InstagramGridProps) {
   const [selectedPost, setSelectedPost] = useState<InstagramPost | null>(null);
@@ -164,7 +164,7 @@ export default function InstagramGrid({
         </div>
 
         {/* Instagram Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6">
           {posts.map((post, index) => (
             <div
               key={post.id}

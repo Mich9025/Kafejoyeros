@@ -8,6 +8,7 @@ interface Certification {
   name: string;
   logo: string;
   description: string;
+  className?: string;
 }
 
 interface BannerProps {
@@ -18,7 +19,7 @@ interface BannerProps {
 
 export default function Banner({
   bannerText = "Calidad Certificada",
-  bannerSubtext = "Gracias a Fairmined, los joyeros que buscan prácticas responsables pueden ofrecera sus clientes metales certificados, con trazabilidad garantizada desde la mina hasta sus manos.",
+  bannerSubtext = "Gracias a Fairmined, los joyeros que buscan prácticas responsables pueden ofrecer a sus clientes metales certificados, con trazabilidad garantizada desde la mina hasta sus manos.",
   certifications = [
     {
       id: 1,
@@ -35,8 +36,9 @@ export default function Banner({
     {
       id: 3,
       name: "Certificación Artesanal",
-      logo: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Copia-de-Sello.png",
-      description: "Calidad artesanal garantizada"
+      logo: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/RSP160011Retailer-Lock-Up-V1-PRINT-8-5x11-V2-03-1-scaled.png",
+      description: "Calidad artesanal garantizada",
+      className: "invert"
     }
   ]
 }: BannerProps) {
@@ -97,7 +99,7 @@ export default function Banner({
                       alt={cert.name}
                       width={250}
                       height={250}
-                      className="w-full h-full object-contain"
+                      className={`w-full h-full object-contain ${cert.className || ''}`}
                     />
                   </div>                  
                 </div>

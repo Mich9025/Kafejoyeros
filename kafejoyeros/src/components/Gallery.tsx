@@ -134,8 +134,8 @@ export default function Gallery({
               {subtitle}
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0">
-            {Array.from({ length: 12 }).map((_, index) => (
+          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-0">
+            {Array.from({ length: 35 }).map((_, index) => (
               <div
                 key={index}
                 className="aspect-square bg-gray-200 animate-pulse"

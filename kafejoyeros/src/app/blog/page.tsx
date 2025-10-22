@@ -80,72 +80,9 @@ export default function BlogPage() {
     } catch (error) {
       console.error('Error fetching posts:', error);
       
-      // Fallback con posts de ejemplo
-      const fallbackPosts: BlogPost[] = [
-        {
-          id: 1,
-          title: 'El Arte de la Joyería Regenerativa',
-          excerpt: 'Descubre cómo nuestro enfoque en la joyería regenerativa está transformando la industria y creando un impacto positivo en el medio ambiente...',
-          slug: 'arte-joyeria-regenerativa',
-          date: '15 de enero de 2025',
-          featuredImage: 'https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/joyeria-regenerativa.png',
-          author: 'Kafé Joyeros',
-          categories: ['Sostenibilidad', 'Artesanía']
-        },
-        {
-          id: 2,
-          title: 'Técnicas Ancestrales en el Diseño Moderno',
-          excerpt: 'Exploramos cómo las técnicas tradicionales de orfebrería se fusionan con el diseño contemporáneo para crear piezas únicas...',
-          slug: 'tecnicas-ancestrales-diseno-moderno',
-          date: '10 de enero de 2025',
-          featuredImage: 'https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/trabajo-artesanal.jpg',
-          author: 'Kafé Joyeros',
-          categories: ['Técnicas', 'Historia']
-        },
-        {
-          id: 3,
-          title: 'El Compromiso con el Oro Responsable',
-          excerpt: 'Conoce nuestro compromiso con la extracción responsable de metales preciosos y cómo esto impacta en cada pieza que creamos...',
-          slug: 'compromiso-oro-responsable',
-          date: '5 de enero de 2025',
-          featuredImage: 'https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/compromiso-foto.jpg',
-          author: 'Kafé Joyeros',
-          categories: ['Responsabilidad', 'Materiales']
-        },
-        {
-          id: 4,
-          title: 'Proceso Artesanal: De la Idea a la Joya',
-          excerpt: 'Un viaje detallado por nuestro proceso creativo, desde el boceto inicial hasta la pieza terminada...',
-          slug: 'proceso-artesanal-idea-joya',
-          date: '28 de diciembre de 2024',
-          featuredImage: 'https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/hecho-a-mano.jpg',
-          author: 'Kafé Joyeros',
-          categories: ['Proceso', 'Artesanía']
-        },
-        {
-          id: 5,
-          title: 'Cuidado y Mantenimiento de Joyas',
-          excerpt: 'Consejos profesionales para mantener tus joyas en perfecto estado y preservar su belleza a través del tiempo...',
-          slug: 'cuidado-mantenimiento-joyas',
-          date: '20 de diciembre de 2024',
-          featuredImage: 'https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-113-scaled.jpg',
-          author: 'Kafé Joyeros',
-          categories: ['Cuidado', 'Consejos']
-        },
-        {
-          id: 6,
-          title: 'Tendencias en Joyería 2025',
-          excerpt: 'Descubre las últimas tendencias en joyería para este año y cómo incorporarlas en tu estilo personal...',
-          slug: 'tendencias-joyeria-2025',
-          date: '15 de diciembre de 2024',
-          featuredImage: 'https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-75-scaled.jpg',
-          author: 'Kafé Joyeros',
-          categories: ['Tendencias', 'Estilo']
-        }
-      ];
-      
-      setPosts(fallbackPosts);
-      setTotalPages(1);
+      // No mostrar contenido de respaldo, solo posts vacíos
+      setPosts([]);
+      setTotalPages(0);
     } finally {
       setLoading(false);
     }
@@ -222,6 +159,23 @@ export default function BlogPage() {
                     </div>
                   </div>
                 ))}
+              </div>
+            ) : posts.length === 0 ? (
+              // Empty state when no posts are available
+              <div className="text-center py-20">
+                <div className="max-w-md mx-auto">
+                  <div className="mb-8">
+                    <svg className="w-24 h-24 mx-auto text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-title-tai-lue font-bold text-gray-900 mb-4">
+                    No hay entradas de blog disponibles
+                  </h3>
+                  <p className="text-gray-600 font-tai-lue">
+                    Actualmente no hay contenido disponible. Vuelve pronto para ver nuestras últimas publicaciones.
+                  </p>
+                </div>
               </div>
             ) : (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -92,7 +92,7 @@ export default function Footer({
             </div>
             <p className="text-gray-300 text-sm leading-relaxed mb-6 font-tai-lue">
               Especialistas en joyería fina y reparaciones de alta calidad. 
-              Con más de 20 años de experiencia, ofrecemos servicios profesionales 
+              Con más de 10 años de experiencia, ofrecemos servicios profesionales 
               y productos únicos para cada ocasión especial.
             </p>
             

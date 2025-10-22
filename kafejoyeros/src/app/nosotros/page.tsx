@@ -110,11 +110,11 @@ export default function NosotrosPage() {
               
               <div className="relative">
                 {/* Collage de imágenes */}
-                <div className="grid grid-cols-2 gap-4 h-[500px]">
+                <div className="grid grid-cols-1 gap-4 h-[500px]">
                   {/* Imagen principal - ocupa toda la columna izquierda */}
                   <div className="relative overflow-hidden rounded-2xl shadow-xl">
                     <Image
-                      src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/joyeria-regenerativa.png"
+                      src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-112-scaled.jpg"
                       alt="Joyería regenerativa"
                       width={300}
                       height={500}
@@ -123,7 +123,7 @@ export default function NosotrosPage() {
                   </div>
                   
                   {/* Columna derecha con 3 imágenes apiladas */}
-                  <div className="flex flex-col gap-4">
+                  {/* <div className="flex flex-col gap-4">
                     <div className="relative overflow-hidden rounded-xl shadow-lg flex-1">
                       <Image
                         src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-113-scaled.jpg"
@@ -153,7 +153,7 @@ export default function NosotrosPage() {
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                       />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 
                 {/* Badge del año */}
@@ -256,7 +256,7 @@ export default function NosotrosPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold font-title-tai-lue text-gray-900 mb-4">Sostenibilidad</h3>
+              <h3 className="text-xl font-bold font-title-tai-lue text-gray-900 mb-4">Responsabilidad</h3>
               <p className="font-tai-lue text-gray-700 leading-relaxed">
                 Cuidamos cada detalle, incluso el embalaje. Nuestras piezas se entregan en empaque eco amigable.
               </p>
@@ -306,7 +306,7 @@ export default function NosotrosPage() {
               
               <div className="relative">
                 {/* Collage interactivo de imágenes */}
-                <div className="grid grid-cols-2 gap-3 h-[500px]">
+                <div className="grid grid-cols-1 gap-3 h-[600px]">
                   {/* Imagen principal superior izquierda */}
                   <div 
                     className="relative overflow-hidden rounded-xl shadow-lg cursor-pointer group row-span-2"
@@ -332,7 +332,7 @@ export default function NosotrosPage() {
                   </div>
                   
                   {/* Columna derecha con 4 imágenes */}
-                  <div className="grid grid-rows-2 gap-3">
+                  {/* <div className="grid grid-rows-2 gap-3">
                     <div 
                       className="relative overflow-hidden rounded-lg shadow-md cursor-pointer group"
                       onClick={() => setSelectedImage({
@@ -376,10 +376,10 @@ export default function NosotrosPage() {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                   
                   {/* Fila inferior con 2 imágenes */}
-                  <div 
+                  {/* <div 
                     className="relative overflow-hidden rounded-lg shadow-md cursor-pointer group"
                     onClick={() => setSelectedImage({
                       src: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Copia-de-Batea-con-oro-Oro-Verde-c-Alejandro-Cock-295-scaled.png",
@@ -399,9 +399,9 @@ export default function NosotrosPage() {
                         <div className="text-sm font-bold">Oro Responsable</div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                   
-                  <div 
+                  {/* <div 
                     className="relative overflow-hidden rounded-lg shadow-md cursor-pointer group"
                     onClick={() => setSelectedImage({
                       src: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/joyeria-regenerativa.png",
@@ -421,7 +421,7 @@ export default function NosotrosPage() {
                         <div className="text-sm font-bold">Joyería Regenerativa</div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -442,7 +442,7 @@ export default function NosotrosPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-8">
             {/* Certificación 1 */}
             <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
               <div className="mb-4">
@@ -460,32 +460,33 @@ export default function NosotrosPage() {
 
             {/* Certificación 2 */}
             <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
-              <div className="w-16 h-16 bg-green rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-xl">GIA</span>
+              <div className="mb-4">
+                <Image
+                  src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Fairmined-Marcas-licenciatarias-2.png"
+                  alt="Fairmined"
+                  width={120}
+                  height={60}
+                  className="mx-auto h-16 w-auto object-contain"
+                />
               </div>
               <h3 className="font-bold font-title-tai-lue text-gray-900 mb-2">Diamantes GIA</h3>
               <p className="font-tai-lue text-gray-600 text-sm">Certificación internacional</p>
             </div>
-
-            {/* Certificación 3 */}
+            
+          {/* Certificación 3 */}
             <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
-              <div className="w-16 h-16 bg-green rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-sm">CM</span>
-              </div>
-              <h3 className="font-bold font-title-tai-lue text-gray-900 mb-2">CanadaMark</h3>
-              <p className="font-tai-lue text-gray-600 text-sm">Diamantes canadienses</p>
-            </div>
-
-            {/* Certificación 4 */}
-            <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
-              <div className="w-16 h-16 bg-green rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                </svg>
+              <div className="mb-4">
+                <Image
+                  src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/free-diamond-icon.png"
+                  alt="Esmeraldas"
+                  width={120}
+                  height={60}
+                  className="mx-auto h-16 w-auto object-contain"
+                />
               </div>
               <h3 className="font-bold font-title-tai-lue text-gray-900 mb-2">Esmeraldas</h3>
               <p className="font-tai-lue text-gray-600 text-sm">Certificación de origen colombiano</p>
-            </div>
+            </div>           
           </div>
         </div>
       </section>
@@ -517,7 +518,7 @@ export default function NosotrosPage() {
               ¿Listo para crear tu historia?
             </h2>
             <p className="text-xl font-tai-lue text-gray-300 leading-relaxed mb-12">
-              No vendemos solo un producto, sino la posibilidad de materializar un sentimiento que acompañe toda la vida.
+              No vendemos solo un producto, sino la posibilidad de materializar un sentimiento que te acompañe toda la vida.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -597,7 +598,7 @@ export default function NosotrosPage() {
                     "Utilizamos oro Fairmined certificado, extraído de manera responsable por comunidades mineras que reciben un precio justo y trabajan en condiciones dignas."
                   }
                   {selectedImage.title === "Joyería Regenerativa" && 
-                    "Nuestra filosofía regenerativa va más allá de la sostenibilidad. Buscamos crear un impacto positivo en las comunidades y el medio ambiente a través de cada joya que creamos."
+                    "Nuestra filosofía regenerativa va más allá de la responsabilidad ambiental. Buscamos crear un impacto positivo en las comunidades y el medio ambiente a través de cada joya que creamos."
                   }
                 </p>
                 
