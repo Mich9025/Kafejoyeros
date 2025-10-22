@@ -17,7 +17,6 @@ interface BlogPost {
   author: string;
   categories: string[];
 }
-
 export default function BlogPage() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
