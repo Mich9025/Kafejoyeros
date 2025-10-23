@@ -54,7 +54,7 @@ export default function Gallery({
         console.log('Attachment IDs:', attachmentIds);
         
         // Obtener detalles de cada imagen (limitado a 12)
-        const imagePromises = attachmentIds.slice(0, 12).map(async (id: string) => {
+        const imagePromises = attachmentIds.slice(0, 35).map(async (id: string) => {
           console.log('Fetching image details for ID:', id);
           
           const imageResponse = await fetch(

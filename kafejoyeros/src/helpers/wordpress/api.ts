@@ -34,6 +34,40 @@ async function fetchWordPressAPI(endpoint: string, options: RequestInit = {}) {
   }
 }
 
+// Función base para hacer peticiones a la API de WordPress con headers
+async function fetchWordPressAPIWithHeaders(endpoint: string, options: RequestInit = {}) {
+  const url = `${WORDPRESS_CONFIG.baseUrl}${endpoint}`;
+  
+  const defaultOptions: RequestInit = {
+    headers: {
+      ...WORDPRESS_CONFIG.defaultHeaders,
+      ...options.headers,
+    },
+    next: {
+      revalidate: WORDPRESS_CONFIG.cache.revalidate,
+    },
+  };
+
+  try {
+    const response = await fetch(url, { ...defaultOptions, ...options });
+    
+    if (!response.ok) {
+      throw new Error(`WordPress API Error: ${response.status} ${response.statusText}`);
+    }
+    
+    const data = await response.json();
+    const headers = {
+      total: response.headers.get('X-WP-Total'),
+      totalPages: response.headers.get('X-WP-TotalPages'),
+    };
+    
+    return { data, headers };
+  } catch (error) {
+    console.error('Error fetching from WordPress API:', error);
+    throw error;
+  }
+}
+
 // Funciones para obtener posts
 export async function getPosts(params: {
   per_page?: number;
@@ -56,6 +90,40 @@ export async function getPosts(params: {
   const endpoint = `${WORDPRESS_CONFIG.endpoints.posts}${queryString ? `?${queryString}` : ''}`;
   
   return await fetchWordPressAPI(endpoint);
+}
+
+// Función para obtener posts con información de paginación
+export async function getPostsWithPagination(params: {
+  per_page?: number;
+  page?: number;
+  categories?: string;
+  tags?: string;
+  search?: string;
+  orderby?: string;
+  order?: 'asc' | 'desc';
+} = {}): Promise<{
+  posts: WordPressPost[];
+  total: number;
+  totalPages: number;
+}> {
+  const searchParams = new URLSearchParams();
+  
+  Object.entries(params).forEach(([key, value]) => {
+    if (value !== undefined) {
+      searchParams.append(key, value.toString());
+    }
+  });
+  
+  const queryString = searchParams.toString();
+  const endpoint = `${WORDPRESS_CONFIG.endpoints.posts}${queryString ? `?${queryString}` : ''}`;
+  
+  const { data, headers } = await fetchWordPressAPIWithHeaders(endpoint);
+  
+  return {
+    posts: data,
+    total: parseInt(headers.total || '0', 10),
+    totalPages: parseInt(headers.totalPages || '0', 10),
+  };
 }
 
 export async function getPostBySlug(slug: string): Promise<WordPressPost | null> {

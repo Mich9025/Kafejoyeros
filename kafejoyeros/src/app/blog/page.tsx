@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { getPosts, getFeaturedImage, type WordPressPost, type WordPressMedia } from '@/helpers/wordpress';
+import { getPosts, getPostsWithPagination, getFeaturedImage, type WordPressPost, type WordPressMedia } from '@/helpers/wordpress';
 
 interface BlogPost {
   id: number;
@@ -32,8 +32,8 @@ export default function BlogPage() {
     try {
       setLoading(true);
       
-      // Obtener posts de WordPress
-      const wordPressPosts = await getPosts({
+      // Obtener posts de WordPress con información de paginación
+      const { posts: wordPressPosts, totalPages: wpTotalPages } = await getPostsWithPagination({
         per_page: postsPerPage,
         page: page,
         orderby: 'date',
@@ -73,8 +73,8 @@ export default function BlogPage() {
 
       setPosts(processedPosts);
       
-      // Calcular total de páginas (esto debería venir del header de la respuesta en una implementación real)
-      setTotalPages(Math.ceil(50 / postsPerPage)); // Asumiendo máximo 50 posts
+      // Usar el total de páginas real de WordPress
+      setTotalPages(wpTotalPages);
       
     } catch (error) {
       console.error('Error fetching posts:', error);

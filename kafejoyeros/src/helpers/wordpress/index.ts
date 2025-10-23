@@ -5,6 +5,7 @@ export * from './api';
 // Re-exportar las funciones más comunes para fácil acceso
 export {
   getPosts,
+  getPostsWithPagination,
   getPostBySlug,
   getPostById,
   getPages,
