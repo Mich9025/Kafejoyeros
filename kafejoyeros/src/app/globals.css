@@ -309,3 +309,129 @@ html {
 .shadow-luxury-hover:hover {
   box-shadow: 0 30px 60px rgba(212, 175, 55, 0.2), 0 15px 30px rgba(0, 0, 0, 0.15);
 }
+
+/* Estilos para contenido de WordPress */
+.wordpress-content {
+  line-height: 1.8;
+  color: #374151;
+}
+
+.wordpress-content h1,
+.wordpress-content h2,
+.wordpress-content h3,
+.wordpress-content h4,
+.wordpress-content h5,
+.wordpress-content h6 {
+  color: var(--green);
+  font-family: var(--font-tai-lue);
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.wordpress-content h1 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.wordpress-content h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.wordpress-content h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.wordpress-content h4 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.wordpress-content p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.wordpress-content ul,
+.wordpress-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.wordpress-content li {
+  margin-bottom: 0.5rem;
+}
+
+.wordpress-content ul li {
+  list-style-type: disc;
+}
+
+.wordpress-content ol li {
+  list-style-type: decimal;
+}
+
+.wordpress-content a {
+  color: var(--red);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.wordpress-content a:hover {
+  color: var(--green);
+}
+
+.wordpress-content strong,
+.wordpress-content b {
+  font-weight: 700;
+  color: var(--green);
+}
+
+.wordpress-content em,
+.wordpress-content i {
+  font-style: italic;
+}
+
+.wordpress-content blockquote {
+  border-left: 4px solid var(--red);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  background-color: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.wordpress-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+.wordpress-content th,
+.wordpress-content td {
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.wordpress-content th {
+  background-color: var(--cream);
+  font-weight: 700;
+  color: var(--green);
+}
+
+.wordpress-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.wordpress-content hr {
+  border: none;
+  height: 1px;
+  background-color: #e5e7eb;
+  margin: 3rem 0;
+}

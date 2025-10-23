@@ -44,7 +44,8 @@ export default function Footer({
     { name: 'Servicios', href: '/servicios' },
     // { name: 'Galería', href: '/galeria' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Contacto', href: '/contacto' }
+    { name: 'Contacto', href: '/contacto' },
+    { name: 'Preguntas Frecuentes', href: '/contacto#faq' }
   ];
 
   const services = [
@@ -56,12 +57,12 @@ export default function Footer({
   ];
 
   const legalLinks = [
-    { name: 'Política de Privacidad', href: '/privacidad' },
-    { name: 'Términos y Condiciones', href: '/terminos' },    
+    { name: 'Política de Privacidad', href: '/privacidad-de-datos' },
+    { name: 'Términos y Condiciones', href: '/terminos-y-condiciones' },    
   ];
 
   return (
-    <footer style={{ backgroundColor: 'var(--cream)' }} className="text-white">
+    <footer style={{ backgroundColor: '#7e766e' }} className="text-white">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-4 gap-8">

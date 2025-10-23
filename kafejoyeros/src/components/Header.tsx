@@ -26,6 +26,7 @@ export default function Header({
 }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +43,14 @@ export default function Header({
     { id: 3, title: 'Servicios', url: '/servicios' },
     { id: 4, title: 'Editorial', url: '/editorial' },
     { id: 5, title: 'Blog', url: '/blog' },
-    { id: 6, title: 'Contacto', url: '/contacto' },
+    { 
+      id: 6, 
+      title: 'Contacto', 
+      url: '/contacto',
+      children: [
+        { id: 61, title: 'Preguntas Frecuentes', url: '/contacto#faq' }
+      ]
+    },
   ];
 
   const navigationItems = menuItems.length > 0 ? menuItems : defaultMenuItems;
@@ -92,15 +100,57 @@ export default function Header({
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navigationItems.map((item) => (
-              <Link
+              <div
                 key={item.id}
-                href={item.url}
-                className={`font-medium font-tai-lue transition-colors duration-200 hover:text-gray-300 ${
-                  darkBackground ? 'text-white' : isScrolled ? 'text-gray-700' : 'text-white'
-                }`}
+                className="relative"
+                onMouseEnter={() => item.children && setOpenSubmenu(item.id)}
+                //onMouseLeave={() => item.children && setOpenSubmenu(null)}
               >
-                {item.title}
-              </Link>
+                <Link
+                  href={item.url}
+                  className={`font-medium font-tai-lue transition-colors duration-200 hover:text-gray-300 flex items-center ${
+                    darkBackground ? 'text-white' : isScrolled ? 'text-gray-700' : 'text-white'
+                  }`}
+                >
+                  {item.title}
+                  {item.children && (
+                    <svg
+                      className={`ml-1 h-4 w-4 transition-transform duration-200 ${
+                        openSubmenu === item.id ? 'rotate-180' : ''
+                      }`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  )}
+                </Link>
+                
+                {/* Dropdown Menu */}
+                {item.children && openSubmenu === item.id && (
+                  <div 
+                    className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
+                    onMouseEnter={() => setOpenSubmenu(item.id)}
+                    onMouseLeave={() => setOpenSubmenu(null)}
+                  >
+                    {item.children.map((child) => (  
+                      <Link
+                        key={child.id}
+                        href={child.url}
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors duration-200"
+                      >
+                        {child.title}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </nav>
 
@@ -154,14 +204,62 @@ export default function Header({
           <div className="lg:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-md rounded-lg mt-2 shadow-lg">
               {navigationItems.map((item) => (
-                <Link
-                  key={item.id}
-                  href={item.url}
-                  className="block px-3 py-2 text-gray-700 font-medium hover:text-gray-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.title}
-                </Link>
+                <div key={item.id}>
+                  {item.children ? (
+                    <div>
+                      <button
+                        className="flex items-center justify-between w-full px-3 py-2 text-gray-700 font-medium hover:text-gray-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
+                        onClick={() => setOpenSubmenu(openSubmenu === item.id ? null : item.id)}
+                      >
+                        <span>{item.title}</span>
+                        <svg
+                          className={`h-4 w-4 transition-transform duration-200 ${
+                            openSubmenu === item.id ? 'rotate-180' : ''
+                          }`}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </button>
+                      {openSubmenu === item.id && (
+                        <div className="ml-4 mt-1 space-y-1">
+                          <Link
+                            href={item.url}
+                            className="block px-3 py-2 text-gray-600 text-sm hover:text-gray-800 hover:bg-gray-50 rounded-md transition-colors duration-200"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {item.title}
+                          </Link>
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.id}
+                              href={child.url}
+                              className="block px-3 py-2 text-gray-600 text-sm hover:text-gray-800 hover:bg-gray-50 rounded-md transition-colors duration-200"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              {child.title}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.url}
+                      className="block px-3 py-2 text-gray-700 font-medium hover:text-gray-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.title}
+                    </Link>
+                  )}
+                </div>
               ))}
               <div className="pt-2">
                 <Link

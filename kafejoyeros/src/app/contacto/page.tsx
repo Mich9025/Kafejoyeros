@@ -234,7 +234,50 @@ function LocationMapContent() {
   );
 }
 
+// Componente para cada item del FAQ
+interface FAQItemProps {
+  question: string;
+  answer: string;
+  isOpen: boolean;
+  onToggle: () => void;
+}
+
+function FAQItem({ question, answer, isOpen, onToggle }: FAQItemProps) {
+  return (
+    <div className="border border-gray-200 rounded-lg overflow-hidden">
+      <button
+        onClick={onToggle}
+        className="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center"
+      >
+        <span className="font-semibold text-[var(--green)] text-lg">{question}</span>
+        <svg
+          className={`w-5 h-5 text-[var(--red)] transform transition-transform duration-200 ${
+            isOpen ? 'rotate-180' : ''
+          }`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="px-6 py-4 bg-white">
+          <p className="text-gray-700 leading-relaxed">{answer}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function ContactoPage() {
+  // Estado para manejar el acordeón de FAQ
+  const [openFAQ, setOpenFAQ] = useState<string | null>(null);
+
   // Define form fields
   const formFields = [
     {
@@ -444,6 +487,84 @@ export default function ContactoPage() {
           {/* Location Information with Tabs */}
           <div className="h-full">
             <LocationMapContent />
+          </div>
+        </div>
+      </div>
+      {/* FAQ */}
+      <div id="faq" className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[var(--green)] mb-4 font-tai-lue">
+              Preguntas Frecuentes
+            </h2>
+            <div className="w-24 h-1 bg-[var(--red)] mx-auto mb-6"></div>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Encuentra respuestas a las preguntas más comunes sobre nuestros servicios y procesos
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Columna 1 */}
+            <div className="space-y-4">
+              <FAQItem
+                question="¿Qué es Kafé Joyeros?"
+                answer="Kafé Joyeros es una iniciativa que busca reinterpretar la joyería tradicional. Ofrecemos asesoría personalizada y elaboramos piezas atemporales que describan a la persona que las lleva puestas, pero sobre todo que quien las use se sienta feliz. Nuestro objetivo es que cada joya cuente una historia. Queremos que quienes lleguen a nosotros se lleven más que una pieza de joyería, una experiencia que les permita materializar una pieza única que lo acompañe toda la vida. Además, brindamos la oportunidad de vivir la experiencia de ser joyero por un día. Recibirás una mini cátedra de iniciación a la joyería de la mano de un maestro artesano y podrás participar en dos procesos fundamentales: Fundición (donde aprenderás a realizar aleaciones de metales) y Laminado (una etapa clave en el moldeado del metal)."
+                isOpen={openFAQ === 'faq1'}
+                onToggle={() => setOpenFAQ(openFAQ === 'faq1' ? null : 'faq1')}
+              />
+              
+              <FAQItem
+                question="¿Qué tipo de joyas hacen?"
+                answer="Hacemos todo tipo de joyas, desde pendientes hasta mancuernas, lo que se nos ocurra y que se pueda trabajar en oro/plata lo hacemos posible, pero nuestra especialidad son las piezas para bodas."
+                isOpen={openFAQ === 'faq2'}
+                onToggle={() => setOpenFAQ(openFAQ === 'faq2' ? null : 'faq2')}
+              />
+              
+              <FAQItem
+                question="¿En qué materiales trabajan?"
+                answer="Nuestras piezas son elaboradas a mano por joyeros artesanos en oro de 18 quilates y/o plata 925 y piedras preciosas como diamante, esmeralda, zafiro y rubí."
+                isOpen={openFAQ === 'faq3'}
+                onToggle={() => setOpenFAQ(openFAQ === 'faq3' ? null : 'faq3')}
+              />
+              
+              <FAQItem
+                question="¿Cómo elegir el anillo de compromiso?"
+                answer="Es común pensar primero en un diamante al buscar un anillo de compromiso, pero hoy en día muchas otras piedras se imponen como opciones igual de hermosas y más asequibles. Tómate el tiempo necesario para elegir, el anillo de compromiso es símbolo de una promesa de amor para toda la vida y debe reflejar la esencia de quien lo va a usar."
+                isOpen={openFAQ === 'faq4'}
+                onToggle={() => setOpenFAQ(openFAQ === 'faq4' ? null : 'faq4')}
+              />
+            </div>
+
+            {/* Columna 2 */}
+            <div className="space-y-4">
+              <FAQItem
+                question="¿Qué piedra elegir?"
+                answer="La elección depende directamente del estilo de la persona que llevará el anillo. El Diamante: Representa perfección, firmeza y rectitud, es la piedra clásica por excelencia, ideal para personas sobrias y tradicionales. La Esmeralda: Simboliza abundancia y equilibrio. Es perfecta para quienes se atreven a arriesgar, una piedra de vanguardia. Zafiro: Símbolo de sabiduría y éxito. Ideal para personas sofisticadas y amantes de la moda. Rubí: Representa confianza e inteligencia. Es la piedra de la pasión, ideal para almas rebeldes."
+                isOpen={openFAQ === 'faq5'}
+                onToggle={() => setOpenFAQ(openFAQ === 'faq5' ? null : 'faq5')}
+              />
+              
+              <FAQItem
+                question="¿Cómo es el proceso de compra?"
+                answer="1) Solicitud de cotización: Nos compartes tu historia y tu idea. 2) Propuesta formal: En un máximo de 5 días hábiles te enviaremos una propuesta. 3) Reserva de tu orden: Una vez aprobada la propuesta económica, deberás reservar tu orden con un abono del 70% del valor total. 4) Elaboración: Durante el proceso, te compartiremos render con la pieza en 3D. La entrega se realizará entre 15 y 20 días hábiles. 5) Entrega y pago final: Al momento de la entrega deberás cancelar el 30% restante. Para diseños totalmente personalizados, el proceso puede tardar hasta 3 meses."
+                isOpen={openFAQ === 'faq6'}
+                onToggle={() => setOpenFAQ(openFAQ === 'faq6' ? null : 'faq6')}
+              />
+              
+              <FAQItem
+                question="¿Dónde están ubicados?"
+                answer="Estamos en Bogotá D.C., Colombia. Atendemos únicamente con cita previa en nuestro estudio, donde podrás co-diseñar tu pieza, conocer de cerca nuestro trabajo y, si lo deseas, vivir la experiencia de ser joyero por un día."
+                isOpen={openFAQ === 'faq7'}
+                onToggle={() => setOpenFAQ(openFAQ === 'faq7' ? null : 'faq7')}
+              />
+              
+              <FAQItem
+                question="¿Tienen un catálogo?"
+                answer="No hay un catálogo porque no trabajamos piezas en serie. Cada joya que hacemos está hecha especialmente para una persona; sin embargo, puedes ver gran parte de lo que hemos creado hasta ahora en nuestro sitio web y redes sociales."
+                isOpen={openFAQ === 'faq8'}
+                onToggle={() => setOpenFAQ(openFAQ === 'faq8' ? null : 'faq8')}
+              />
+            </div>
           </div>
         </div>
       </div>
