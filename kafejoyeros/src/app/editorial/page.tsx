@@ -34,6 +34,7 @@ export default function EditorialPage() {
               src={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/hecho-a-mano.jpg"}
               alt={"Hero background"}
               fill
+              unoptimized={true}
               className="object-cover scale-110 animate-slow-zoom"              
             />
           </div>        

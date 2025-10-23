@@ -173,6 +173,7 @@ export default function Gallery({
                 alt={image.alt}
                 width={image.width}
                 height={image.height}
+                unoptimized={true}
                 className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
                 style={{
                   aspectRatio: `${image.width}/${image.height}`

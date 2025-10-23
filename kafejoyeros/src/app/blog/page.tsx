@@ -110,6 +110,7 @@ export default function BlogPage() {
               src={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/piedras-certificadas.jpg"}
               alt={"Hero background"}
               fill
+              unoptimized={true}
               className="object-cover scale-110 animate-slow-zoom"              
             />
           </div>        
@@ -190,6 +191,7 @@ export default function BlogPage() {
                         src={post.featuredImage || 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&h=400&fit=crop'}
                         alt={post.title}
                         fill
+                        unoptimized={true}
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
