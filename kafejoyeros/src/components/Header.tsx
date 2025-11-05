@@ -134,7 +134,7 @@ export default function Header({
                 alt={companyName}
                 width={450}
                 height={450}
-                className="h-8 lg:h-10 w-full"
+                className={`h-8 lg:h-10 w-full ${isScrolled ? 'invert' : ''}`}
               />
             </Link>
           </div>

@@ -160,7 +160,7 @@ export default function ServiciosPage() {
 
   return (
     <>
-      <Header logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-4-JPG-Photoroom.png"} />
+      <Header logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-2-JPG-Photoroom.png"} />
       
       <main className="min-h-screen bg-white">
         {/* Componente hijo envuelto en Suspense para usar useSearchParams sin error */}

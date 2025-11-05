@@ -43,8 +43,7 @@ export default function Footer({
     { name: 'Nosotros', href: '/nosotros' },
     { name: 'Servicios', href: '/servicios' },
     // { name: 'Galería', href: '/galeria' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Contacto', href: '/contacto' },
+    { name: 'Blog', href: '/blog' },    
     { name: 'Preguntas Frecuentes', href: '/contacto#faq' }
   ];
 
