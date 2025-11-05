@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import React from 'react';
 
 interface Service {
   id: number;
@@ -31,11 +32,39 @@ interface SelectedService {
   }[];
 }
 
+// Componente hijo que maneja la lectura de searchParams dentro de un Suspense boundary
+function PreselectService({
+  services,
+  setSelectedService,
+}: {
+  services: Service[];
+  setSelectedService: (s: SelectedService) => void;
+}) {
+  const searchParams = useSearchParams();
+  // Evita re-seleccionar después de cerrar el modal
+  const hasPreselectedRef = React.useRef(false);
+
+  useEffect(() => {
+    if (hasPreselectedRef.current) return;
+    hasPreselectedRef.current = true;
+    const idParam = searchParams.get('serviceId');
+    if (!idParam) return;
+    const id = Number(idParam);
+    const found = services.find((s) => s.id === id);
+    if (found) {
+      setSelectedService(found as SelectedService);
+    }
+  }, [searchParams, services, setSelectedService]);
+
+  return null;
+}
+
 export default function ServiciosPage() {
   const [selectedService, setSelectedService] = useState<SelectedService | null>(null);
-  const searchParams = useSearchParams();
 
-  const services: Service[] = [
+  // Memoiza la lista de servicios para evitar recrearla en cada render
+  const services: Service[] = useMemo(
+    () => [
     {
       id: 1,
       title: "Oro del cuál te sentirás orgulloso",
@@ -98,21 +127,9 @@ export default function ServiciosPage() {
         }
       ]
     }
-  ];
+  ], []);
 
-  // Preselecciona el servicio si viene en la URL como ?serviceId=ID
-  useEffect(() => {
-    const idParam = searchParams.get('serviceId');
-    if (idParam) {
-      const id = Number(idParam);
-      const found = services.find((s) => s.id === id);
-      if (found) {
-        setSelectedService(found);
-        // Opcional: hacer scroll a la sección de detalle si existe
-        // document.getElementById('service-details')?.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }, [searchParams]);
+  // Preselección del servicio ahora se maneja en el componente PreselectService dentro de Suspense
 
   const whyChooseUs = [
     {
@@ -146,6 +163,13 @@ export default function ServiciosPage() {
       <Header logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-4-JPG-Photoroom.png"} />
       
       <main className="min-h-screen bg-white">
+        {/* Componente hijo envuelto en Suspense para usar useSearchParams sin error */}
+        <Suspense fallback={null}>
+          <PreselectService
+            services={services}
+            setSelectedService={(s) => setSelectedService(s)}
+          />
+        </Suspense>
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-[#2c4026] via-[#171717]/20 to-[#2c4026] py-32 overflow-hidden">
           {/* Background Image with Parallax Effect */}
