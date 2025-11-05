@@ -293,7 +293,7 @@ export default function BlogPostPage() {
   if (loading) {
     return (
       <>
-        <Header logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-4-JPG-Photoroom.png"} />
+        {/* <Header logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-4-JPG-Photoroom.png"} /> */}
         <main className="min-h-screen bg-white">
           <div className="container mx-auto px-4 py-20">
             <div className="animate-pulse">
@@ -316,7 +316,7 @@ export default function BlogPostPage() {
   if (!post) {
     return (
       <>
-        <Header logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-4-JPG-Photoroom.png"} />
+        {/* <Header logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-4-JPG-Photoroom.png"} /> */}
         <main className="min-h-screen bg-white flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-4xl font-title-tai-lue font-bold text-gray-900 mb-4">
@@ -340,14 +340,14 @@ export default function BlogPostPage() {
 
   return (
     <>
-      <Header logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-4-JPG-Photoroom.png"} />
+      {/* <Header logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-4-JPG-Photoroom.png"} /> */}
       
       <main className="min-h-screen bg-white">
         {/* Breadcrumb */}
         <nav className="bg-gray-50 py-4">
           <div className="container mx-auto px-4">
             <div className="flex items-center space-x-2 text-sm font-tai-lue">
-              <Link href="/" className="text-gray-500 hover:text-red transition-colors">
+              <Link href="/" className="bg-button font-tai-lue text-white px-6 py-2 rounded-full font-medium transition-all duration-200 shadow-luxury hover:shadow-luxury-hover">
                 Inicio
               </Link>
               <span className="text-gray-400">/</span>
@@ -385,9 +385,9 @@ export default function BlogPostPage() {
               </h1>
 
               {/* Excerpt */}
-              <p className="text-xl text-gray-600 font-tai-lue leading-relaxed mb-8">
+              {/* <p className="text-xl text-gray-600 font-tai-lue leading-relaxed mb-8">
                 {post.excerpt}
-              </p>
+              </p> */}
 
               {/* Featured Image */}
               {post.featuredImage && (

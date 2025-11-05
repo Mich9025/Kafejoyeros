@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -32,6 +33,7 @@ interface SelectedService {
 
 export default function ServiciosPage() {
   const [selectedService, setSelectedService] = useState<SelectedService | null>(null);
+  const searchParams = useSearchParams();
 
   const services: Service[] = [
     {
@@ -74,7 +76,14 @@ export default function ServiciosPage() {
     {
       id: 4,
       title: "Joyería Regenerativa",
-      description: "Creemos que la joyería también puede sanar. Estamos comprometidos con darle un respiro al planeta y devolverle vida a los territorios que han sido impactados por la minería ilegal. Por eso, apoyamos iniciativas como BOSQUE NAGAL y MINGAKURI, que trabajan en la reforestación de zonas degradadas y en el fortalecimiento de comunidades campesinas locales, generando oportunidades sostenibles y restaurando ecosistemas vitales. Cada pieza que creamos no solo busca contar tu historia, sino también ser parte de una historia más grande,  la de una joyería consciente, regenerativa y con propósito. Enlace a cuenta de Instagram de Organización para la conservación del medio ambiente en la Amazonia Colombiana, de donde nace la iniciativa Mingakuri. AMAZONOMÍA",      image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/joyeria-regenerativa.png"
+      description: "Creemos que la joyería también puede sanar. Estamos comprometidos con darle un respiro al planeta y devolverle vida a los territorios que han sido impactados por la minería ilegal. Por eso, apoyamos iniciativas como BOSQUE NAGAL y MINGAKURI, que trabajan en la reforestación de zonas degradadas y en el fortalecimiento de comunidades campesinas locales, generando oportunidades sostenibles y restaurando ecosistemas vitales. Cada pieza que creamos no solo busca contar tu historia, sino también ser parte de una historia más grande,  la de una joyería consciente, regenerativa y con propósito. . AMAZONOMÍA",      image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/joyeria-regenerativa.png",
+      additionalButtons: [
+        {
+          text: "Instagram",
+          url: "https://www.instagram.com/amazonomia_colombia/",
+          isExternal: true
+        }
+      ]
     },
     {
       id: 5,
@@ -90,6 +99,20 @@ export default function ServiciosPage() {
       ]
     }
   ];
+
+  // Preselecciona el servicio si viene en la URL como ?serviceId=ID
+  useEffect(() => {
+    const idParam = searchParams.get('serviceId');
+    if (idParam) {
+      const id = Number(idParam);
+      const found = services.find((s) => s.id === id);
+      if (found) {
+        setSelectedService(found);
+        // Opcional: hacer scroll a la sección de detalle si existe
+        // document.getElementById('service-details')?.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [searchParams]);
 
   const whyChooseUs = [
     {
@@ -132,7 +155,7 @@ export default function ServiciosPage() {
             className={`absolute inset-0 transition-opacity duration-2000 ease-in-out`}
           >
             <Image
-              src={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/hecho-a-mano.jpg"}
+              src={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-130-scaled.jpg"}
               alt={"Hero background"}
               fill
               className="object-cover scale-110 animate-slow-zoom"              
@@ -164,17 +187,17 @@ export default function ServiciosPage() {
         <div className="absolute top-1/2 left-10 w-2 h-20 bg-gradient-to-b from-[#b0b0b0] to-transparent opacity-60"></div>
         <div className="absolute top-1/3 right-16 w-1 h-32 bg-gradient-to-b from-[#b0b0b0] to-transparent opacity-40"></div>
       </div>
-          <div className="absolute inset-0 bg-black/20"></div>
+          {/* <div className="absolute inset-0 bg-black/20"></div> */}
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center text-white">
-              <h1 className="mt-8 text-5xl md:text-7xl font-title-tai-lue font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              {/* <h1 className="mt-8 text-5xl md:text-7xl font-title-tai-lue font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 NUESTROS SERVICIOS
-              </h1>
-              <p className="text-xl md:text-2xl font-tai-lue text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
+              </h1> */}
+              {/* <p className="text-xl md:text-2xl font-tai-lue text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
                 Una experiencia integral en joyería personalizada con enfoque en la artesanía responsable, 
                 trazabilidad de materiales y la co-creación con nuestros clientes.
-              </p>
-              <div className="mt-8 w-24 h-1 bg-gradient-to-r from-transparent via-white to-transparent mx-auto"></div>
+              </p> */}
+              {/* <div className="mt-8 w-24 h-1 bg-gradient-to-r from-transparent via-white to-transparent mx-auto"></div> */}
             </div>
           </div>
           

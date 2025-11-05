@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
 interface Service {
@@ -22,39 +23,40 @@ export default function Services({
       title: "Oro del cuál te sentirás orgulloso",
       description: "Opta por piezas elaboradas con metales preciosos extraídos de manera responsable, apoya el crecimiento de mineros artesanales locales y sus familias, y recibe joyas con mayor trazabilidad y menor impacto medio ambiental.",
       image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Copia-de-Batea-con-oro-Oro-Verde-c-Alejandro-Cock-295-scaled.png",
-      link: "/servicios/diseno-personalizado"
+      link: "/servicios?serviceId=1"
     },
     {
       id: 2,
       title: "Hecho a la medida",
       description: "Enaltecer el trabajo de nuestros artesanos preservando las técnicas heredadas por generaciones y velando porque el oficio perdure en el tiempo, es lo que da verdadero valor a cada una de nuestras piezas.",
       image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/trabajo-artesanal.jpg",
-      link: "/servicios/reparacion"
+      link: "/servicios?serviceId=2"
     },
     {
       id: 3,
       title: "Ser joyero por un día.",
       description: "Nuestros artesanos no solo trabajan el metal, preservan una tradición viva, cuidando cada detalle con autenticidad y respeto.",
       image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/hecho-a-mano.jpg",
-      link: "/servicios/engastado"
+      link: "/servicios?serviceId=3"
     },
     {
       id: 4,
       title: "Hagamos juntos parte de una joyería regenerativa",
       description: "Creemos que la joyería también puede sanar. Estamos comprometidos con darle un respiro al planeta y devolverle vida a los territorios que han sido impactados por la minería ilegal.",
       image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/joyeria-regenerativa.png",
-      link: "/servicios/artesanal"
+      link: "/servicios?serviceId=4"
     },
     {
       id: 5,
       title: "Nuestro compromiso es hacer el tuyo inolvidable",
       description: "Los anillos de boda son nuestra especialidad. Te acompañamos en un proceso íntimo y personalizado, desde la elección de los materiales hasta el diseño final de tu pieza, asegurándonos de que cada anillo refleje la historia, estilo y esencia de quien lo va a llevar.",
       image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/compromiso-foto.jpg",
-      link: "/servicios/consultoria"
+      link: "/servicios?serviceId=5"
     }
   ]
 }: ServicesProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const router = useRouter();
 
   // Auto-play del carrusel
   useEffect(() => {
@@ -96,8 +98,9 @@ export default function Services({
       {services.map((service, index) => (
         <div
           key={service.id}
+          aria-hidden={index !== currentSlide}
           className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
+            index === currentSlide ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
         >
           {/* Imagen de fondo difuminada */}
@@ -150,9 +153,9 @@ export default function Services({
                     </div>
 
                     {/* Botón */}
-                    <div className="pt-4">
-                      <a
-                        href={service.link}
+                    <div className="">
+                      <button
+                        onClick={() => router.push("servicios?serviceId=" + service.id)}
                         className="inline-flex items-center px-8 py-4 bg-button text-white font-semibold font-tai-lue rounded-full hover:bg-button-green transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
                       >
                         Conocer Más
@@ -164,12 +167,12 @@ export default function Services({
                         >
                           <path
                             strokeLinecap="round"
-                             strokeLinejoin="round"
+                            strokeLinejoin="round"
                             strokeWidth={2}
                             d="M17 8l4 4m0 0l-4 4m4-4H3"
                           />
                         </svg>
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>

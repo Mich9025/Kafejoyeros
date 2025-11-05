@@ -434,36 +434,36 @@ export default function ContactoPage() {
         {/* Decorative Elements */}
         <div className="absolute top-20 left-20 w-32 h-32 animate-float">
           <Image 
-            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/GranitoCafe.svg" 
+            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
             alt="Decorative element" 
             fill
-            className="w-full h-full object-contain opacity-60 filter brightness-110"
+            className="w-full h-full object-contain opacity-20 filter brightness-110"
             style={{filter: 'sepia(100%) hue-rotate(15deg) brightness(3.5)'}}
           />
         </div>         
         <div className="absolute bottom-32 right-32 w-24 h-24 rotate-12 animate-float" style={{animationDelay: '1s'}}>
         <Image 
-            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/GranitoCafe.svg" 
+            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
             alt="Decorative element" 
             fill
-            className="w-full h-full object-contain opacity-60 filter brightness-110"
+            className="w-full h-full object-contain opacity-20 filter brightness-110"
             style={{filter: 'sepia(100%) hue-rotate(15deg) brightness(3.5)'}}
           />
           </div>
         <div className="absolute top-1/2 left-10 w-2 h-20 bg-gradient-to-b from-[#b0b0b0] to-transparent opacity-60"></div>
         <div className="absolute top-1/3 right-16 w-1 h-32 bg-gradient-to-b from-[#b0b0b0] to-transparent opacity-40"></div>
       </div>
-          <div className="absolute inset-0 bg-black/20"></div>
+          {/* <div className="absolute inset-0 bg-black/20"></div> */}
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center text-white">
-              <h1 className="mt-8 text-5xl md:text-7xl font-title-tai-lue font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              {/* <h1 className="mt-8 text-5xl md:text-7xl font-title-tai-lue font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 CONTACTANOS
-              </h1>
+              </h1> */}
               {/* <p className="text-xl md:text-2xl font-tai-lue text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
                 Una experiencia integral en joyería personalizada con enfoque en la artesanía responsable, 
                 trazabilidad de materiales y la co-creación con nuestros clientes.
               </p> */}
-              <div className="mt-8 w-24 h-1 bg-gradient-to-r from-transparent via-white to-transparent mx-auto"></div>
+              {/* <div className="mt-8 w-24 h-1 bg-gradient-to-r from-transparent via-white to-transparent mx-auto"></div> */}
             </div>
           </div>
           

@@ -53,21 +53,21 @@ export default function NosotrosPage() {
 
         {/* Hero Content */}
         <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-          <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold font-title-tai-lue mb-6 transition-all duration-1000 ${
+          {/* <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold font-title-tai-lue mb-6 transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             NOSOTROS
-          </h1>
+          </h1> */}
           
-          <div className={`h-px bg-gradient-to-r from-transparent via-white to-transparent w-32 mx-auto mb-8 transition-all duration-1000 delay-300 ${
+          {/* <div className={`h-px bg-gradient-to-r from-transparent via-white to-transparent w-32 mx-auto mb-8 transition-all duration-1000 delay-300 ${
             isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'
-          }`}></div>
+          }`}></div> */}
           
-          <p className={`text-xl md:text-2xl font-tai-lue font-light leading-relaxed transition-all duration-1000 delay-500 ${
+          {/* <p className={`text-xl md:text-2xl font-tai-lue font-light leading-relaxed transition-all duration-1000 delay-500 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             Reinterpretando la joyería tradicional desde 2017, creamos piezas impregnadas de valores positivos con impacto social y medioambiental medible.
-          </p>
+          </p> */}
         </div>
 
         {/* Scroll Indicator */}
@@ -116,7 +116,7 @@ export default function NosotrosPage() {
                     <Image
                       src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-112-scaled.jpg"
                       alt="Joyería regenerativa"
-                      width={300}
+                      width={1000}
                       height={500}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                     />

@@ -69,25 +69,25 @@ export default function Hero({
         {/* Decorative Elements */}
         <div className="absolute top-20 left-20 w-32 h-32 animate-float">
           <Image 
-            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/GranitoCafe.svg" 
+            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
             alt="Decorative element" 
             fill
-            className="w-full h-full object-contain opacity-60 filter brightness-110"
+            className="w-full h-full object-contain opacity-20 filter brightness-110"
             style={{filter: 'sepia(100%) hue-rotate(15deg) brightness(3.5)'}}
           />
         </div>
         <div className="absolute bottom-32 right-32 w-24 h-24 animate-float" style={{animationDelay: '1s'}}>
           <Image
-            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/GranitoCafe.svg" 
+            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
             alt="Decorative element" 
             fill
-            className="w-full h-full object-contain opacity-40 rotate-12"
+            className="w-full h-full object-contain opacity-20 rotate-12"
             style={{filter: 'sepia(30%) hue-rotate(25deg) brightness(2.5)'}}
           />
         </div>
-        <div className="absolute top-1/2 left-10 w-16 h-20 animate-float" style={{animationDelay: '0.5s'}}>
+        {/* <div className="absolute top-1/2 left-10 w-16 h-20 animate-float" style={{animationDelay: '0.5s'}}>
           <Image 
-            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/GranitoCafe.svg" 
+            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
             alt="Decorative element" 
             fill
             className="w-full h-full object-contain opacity-50"
@@ -96,13 +96,15 @@ export default function Hero({
         </div>
         <div className="absolute top-1/3 right-16 w-12 h-32 animate-float" style={{animationDelay: '1.5s'}}>
           <Image 
-            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/GranitoCafe.svg" 
+            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
             alt="Decorative element" 
             fill
             className="w-full h-full object-contain opacity-40"
             style={{filter: 'sepia(30%) hue-rotate(10deg) brightness(2.5)'}}
           />
-        </div>
+        </div>         */}
+        <div className="absolute top-20 left-10 w-32 h-32 border border-white/10 rounded-full"></div>
+        <div className="absolute bottom-20 right-10 w-48 h-48 border border-white/5 rounded-full"></div>
       </div>
 
       {/* Main Content */}

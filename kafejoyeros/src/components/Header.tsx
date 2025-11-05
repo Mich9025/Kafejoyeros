@@ -54,10 +54,12 @@ export default function Header({
   ];
 
   const navigationItems = menuItems.length > 0 ? menuItems : defaultMenuItems;
+  const leftNavItems = navigationItems.filter((item) => item.title === 'Nosotros' || item.title === 'Servicios');
+  const rightNavItems = navigationItems.filter((item) => item.title === 'Editorial' || item.title === 'Blog');
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 py-2 left-0 right-0 z-50 transition-all duration-300 ${
         darkBackground
           ? 'bg-[#171717] backdrop-blur-md shadow-lg'
           : isScrolled 
@@ -65,41 +67,12 @@ export default function Header({
             : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center space-x-2">
-              {logo ? (
-                <Image 
-                  src={logo} 
-                  alt={companyName}
-                  width={250}
-                  height={250}
-                  className={`h-8 lg:h-10 w-auto transition-all duration-300 ${
-                    isScrolled ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-                  }`}
-                />
-              ) : (
-                <div className={`flex items-center space-x-2 transition-all duration-300 ${
-                  isScrolled ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-                }`}>
-                  <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-sm lg:text-base">K</span>
-                  </div>
-                  <span className={`font-bold font-serif text-lg lg:text-xl ${
-                    darkBackground ? 'text-white' : isScrolled ? 'text-gray-900' : 'text-white'
-                  }`}>
-                    {companyName}
-                  </span>
-                </div>
-              )}
-            </Link>
-          </div>
-
+      <div className="container mx-auto">
+        <div className="flex flex-row items-center justify-center gap-20 py-6 mt-2">
+          
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            {navigationItems.map((item) => (
+          <nav className="hidden lg:flex items-center space-x-6">
+            {leftNavItems.map((item) => (
               <div
                 key={item.id}
                 className="relative"
@@ -153,19 +126,52 @@ export default function Header({
               </div>
             ))}
           </nav>
-
-          {/* CTA Button */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <Link
-              href="/contacto"
-              className="bg-button font-tai-lue text-white px-6 py-2 rounded-full font-medium transition-all duration-200 shadow-luxury hover:shadow-luxury-hover"
-            >
-              Agendar Cita
+          {/* Logo */}
+          <div className="hidden lg:flex items-center justify-center">
+            <Link href="/" className="">
+              <Image
+                src={logo || ''}
+                alt={companyName}
+                width={450}
+                height={450}
+                className="h-8 lg:h-10 w-full"
+              />
             </Link>
           </div>
 
+          {/* Nav part 2 */}
+          <div className="hidden lg:flex items-center space-x-6">
+            <nav className="flex items-center space-x-6">
+              {rightNavItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="relative"
+                  onMouseEnter={() => item.children && setOpenSubmenu(item.id)}
+                >
+                  <Link
+                    href={item.url}
+                    className={`font-medium font-tai-lue transition-colors duration-200 hover:text-gray-300 flex items-center ${
+                      darkBackground ? 'text-white' : isScrolled ? 'text-gray-700' : 'text-white'
+                    }`}
+                  >
+                    {item.title}
+                  </Link>
+                </div>
+              ))}
+            </nav>            
+          </div>
+
+          <div className="hidden lg:flex fixed  right-16">
+          <Link
+            href="/contacto"
+            className="bg-button font-tai-lue text-white px-6 py-2 rounded-full font-medium transition-all duration-200 shadow-luxury hover:shadow-luxury-hover"
+          >
+            Agendar Cita
+          </Link>
+        </div>
+
           {/* Mobile menu button */}
-          <div className="lg:hidden">
+          <div className="lg:hidden fixed top-4 right-4">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`p-2 rounded-md transition-colors duration-200 ${
@@ -198,6 +204,7 @@ export default function Header({
             </button>
           </div>
         </div>
+        
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
@@ -267,7 +274,7 @@ export default function Header({
                   className="block w-full text-center btn-luxury text-white px-4 py-2 rounded-full font-medium transition-all duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Cotizar
+                  Agendar Cita
                 </Link>
               </div>
             </div>

@@ -65,25 +65,25 @@ export default function About({
     },
     {
       icon: "traceability", 
-      title: "Trazabilidad Completa",
-      description: "Conoce el origen de tu joya, desde las comunidades mineras hasta el taller de nuestros artesanos."
+      title: "Trazabilidad",
+      description: "Conoce el origen de tu joya, desde las comunidades mineras hasta que llega a tus manos."
     },
     {
       icon: "artisan",
-      title: "Técnicas Ancestrales",
+      title: "Técnica Ancestral",
       description: "Rescatamos y aplicamos técnicas tradicionales heredadas por generaciones de joyeros colombianos."
     },
     {
       icon: "sustainability",
-      title: "Made-To-Order",
-      description: "Evitamos la sobreproducción creando piezas personalizadas para cada historia única."
+      title: "Hecho a la Medida",
+      description: "Evitamos la sobreproducción creando piezas personalizadas."
     }
   ];
 
   const stats = [
     { number: "2017", label: "Año de Fundación" },
     { number: "100%", label: "Oro y Plata Responsable" },
-    { number: "Made-To-Order", label: "Modelo Sostenible" },
+    { number: "Hecho a la Medida", label: "Modelo Sostenible" },
     { number: "Colombia", label: "Origen Artesanal" }
   ];
 
