@@ -48,7 +48,7 @@ export default function EditorialPage() {
             src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
             alt="Decorative element" 
             fill
-            className="w-full h-full object-contain opacity-60 filter brightness-110"
+            className="w-full h-full object-contain opacity-20 filter brightness-110"
             style={{filter: 'sepia(100%) hue-rotate(15deg) brightness(3.5)'}}
           />
         </div>        
@@ -57,7 +57,7 @@ export default function EditorialPage() {
             src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
             alt="Decorative element" 
             fill
-            className="w-full h-full object-contain opacity-60 filter brightness-110"
+            className="w-full h-full object-contain opacity-20 filter brightness-110"
             style={{filter: 'sepia(100%) hue-rotate(15deg) brightness(3.5)'}}
           />
         </div>

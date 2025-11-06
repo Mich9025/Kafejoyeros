@@ -192,19 +192,19 @@ export default function ServiciosPage() {
         {/* Decorative Elements */}
          <div className="absolute top-20 left-20 w-32 h-32 animate-float">
           <Image 
-            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/GranitoCafe.svg" 
+            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
             alt="Decorative element" 
             fill
-            className="w-full h-full object-contain opacity-60 filter brightness-110"
+            className="w-full h-full object-contain opacity-20 filter brightness-110"
             style={{filter: 'sepia(100%) hue-rotate(15deg) brightness(3.5)'}}
           />
         </div>        
         <div className="absolute bottom-32 right-32 w-24 h-24 rotate-12 animate-float" style={{animationDelay: '1s'}}>
         <Image 
-            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/GranitoCafe.svg" 
+            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
             alt="Decorative element" 
             fill
-            className="w-full h-full object-contain opacity-60 filter brightness-110"
+            className="w-full h-full object-contain opacity-20 filter brightness-110"
             style={{filter: 'sepia(100%) hue-rotate(15deg) brightness(3.5)'}}
           />
         </div>
