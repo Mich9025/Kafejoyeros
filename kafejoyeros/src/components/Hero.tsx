@@ -27,8 +27,8 @@ export default function Hero({
     "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/0DBD3315-D87C-4ED7-83F6-3D4F1BF6354B.jpg",
     "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-75-scaled.jpg"
   ],
-  primaryCTA = { text: "Explorar Editorial", href: "#galeria" },
-  secondaryCTA = { text: "Contacta con nosotros", href: "#contacto" }
+  primaryCTA = { text: "Explorar Editorial", href: "/editorial" },
+  secondaryCTA = { text: "Contacta con nosotros", href: "/contacto" }
 }: HeroProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
