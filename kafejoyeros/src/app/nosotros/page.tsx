@@ -449,9 +449,11 @@ export default function NosotrosPage() {
                 <Image
                   src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Fairmined-Marcas-licenciatarias-2.png"
                   alt="Fairmined"
-                  width={120}
+                  width={250
+
+                  }
                   height={60}
-                  className="mx-auto h-16 w-auto object-contain"
+                  className="mx-auto h-28 w-auto object-contain"
                 />
               </div>
               <h3 className="font-bold font-title-tai-lue text-gray-900 mb-2">Fairmined</h3>
@@ -462,11 +464,11 @@ export default function NosotrosPage() {
             <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
               <div className="mb-4">
                 <Image
-                  src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Fairmined-Marcas-licenciatarias-2.png"
-                  alt="Fairmined"
-                  width={120}
+                  src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/RSP160011Retailer-Lock-Up-V1-PRINT-8-5x11-V2-03-1-scaled.png"
+                  alt="Diamantes GIA"
+                  width={250}
                   height={60}
-                  className="mx-auto h-16 w-auto object-contain"
+                  className="invert mx-auto h-28 w-auto object-contain"
                 />
               </div>
               <h3 className="font-bold font-title-tai-lue text-gray-900 mb-2">Diamantes GIA</h3>
@@ -479,9 +481,9 @@ export default function NosotrosPage() {
                 <Image
                   src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/free-diamond-icon.png"
                   alt="Esmeraldas"
-                  width={120}
+                  width={420}
                   height={60}
-                  className="mx-auto h-16 w-auto object-contain"
+                  className="mx-auto h-28 w-auto object-contain"
                 />
               </div>
               <h3 className="font-bold font-title-tai-lue text-gray-900 mb-2">Esmeraldas</h3>
