@@ -12,7 +12,23 @@ export default function EncuestaPage() {
       type: "section-header" as const,
       placeholder: "Nos gustaría conocer su experiencia trabajando con nosotros. Sus respuestas nos ayudarán a mejorar nuestros servicios.",
       span: "full" as const,
-      className: "text-lg text-center text-gray-600 mb-12"
+      className: "text-lg text-center text-gray-600 mb-8"
+    },
+    {
+      name: "calificacion",
+      label: "Calificación General",
+      type: "select" as const,
+      placeholder: "Seleccione una calificación",
+      required: true,
+      span: "full" as const,
+      options: [
+        { value: "5", label: "⭐⭐⭐⭐⭐ Excelente" },
+        { value: "4", label: "⭐⭐⭐⭐ Muy Bueno" },
+        { value: "3", label: "⭐⭐⭐ Bueno" },
+        { value: "2", label: "⭐⭐ Regular" },
+        { value: "1", label: "⭐ Malo" }
+      ],
+      className: "w-full placeholder:text-gray-400"
     },
     {
       name: "pregunta1",
@@ -21,7 +37,7 @@ export default function EncuestaPage() {
       placeholder: "Comparta los motivos que lo llevaron a elegirnos inicialmente...",
       required: true,
       span: "full" as const,
-      className: "min-h-[120px]"
+      className: "min-h-[100px] placeholder:text-gray-400"
     },
     {
       name: "pregunta2", 
@@ -30,7 +46,7 @@ export default function EncuestaPage() {
       placeholder: "Cuéntenos qué lo motiva a seguir siendo nuestro cliente...",
       required: true,
       span: "full" as const,
-      className: "min-h-[120px]"
+      className: "min-h-[100px] placeholder:text-gray-400"
     },
     {
       name: "pregunta3",
@@ -39,7 +55,7 @@ export default function EncuestaPage() {
       placeholder: "Describa qué aspectos considera únicos en nuestro servicio...",
       required: true,
       span: "full" as const,
-      className: "min-h-[120px]"
+      className: "min-h-[100px] placeholder:text-gray-400"
     },
     {
       name: "pregunta4",
@@ -48,50 +64,68 @@ export default function EncuestaPage() {
       placeholder: "Si nos ha recomendado, comparta las razones. Si no, puede explicar por qué...",
       required: true,
       span: "full" as const,
-      className: "min-h-[120px]"
+      className: "min-h-[100px] placeholder:text-gray-400"
     }
   ];
 
   const handleSubmit = async (data: Record<string, string | boolean | File | number | null>) => {
     try {
-      console.log('Datos de la encuesta:', data);
-      // Aquí se implementaría el envío de datos al backend
-      // Por ahora solo mostramos en consola
-      alert('¡Gracias por completar la encuesta! Sus respuestas han sido enviadas.');
+      const response = await fetch('/api/survey', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Error al enviar la encuesta');
+      }
+      
+      // El componente DynamicForm manejará el mensaje de éxito
     } catch (error) {
       console.error('Error al enviar la encuesta:', error);
       alert('Hubo un error al enviar la encuesta. Por favor, inténtelo de nuevo.');
+      throw error; // Re-lanzar para que DynamicForm sepa que falló
     }
   };
 
   return (
     <>    
     <Header darkBackground={true} logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-2-JPG-Photoroom.png"} />       
-    <div className="min-h-screen bg-white">          
-      <main className="pt-12">
+    <div className="min-h-screen bg-gray-50">          
+      <main className="pt-40 pb-20">
         {/* Hero Section */}
-        <section className="py-20 bg-white">
-          <h1 className="text-4xl font-bold text-center text-gray-900">
-            ENCUESTA DE SATISFACIÓN
-          </h1>
+        <section className="mb-12">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Encuesta de Satisfacción
+            </h1>
+            <div className="w-24 h-1 bg-[var(--red)] mx-auto rounded-full"></div>
+          </div>
         </section>
 
-        {/* Content Section */}
-        <section className="py-20 bg-gray-100">
+        {/* Form Section */}
+        <section>
           <div className="container mx-auto px-4">   
-            <div className="container mx-auto px-4 max-w-4xl">
-            <DynamicForm
-              fields={surveyFields}
-              onSubmit={handleSubmit}
-              submitText="Enviar Encuesta"
-              submitClassName="w-full p-2 bg-[var(--red)] text-white rounded hover:bg-[#270218] disabled:opacity-50"
-              loadingText="Enviando..."
-              successMessage="¡Encuesta enviada!"
-              successDescription="Gracias por tomarse el tiempo de completar nuestra encuesta."
-              retryText="Enviar otra respuesta"
-              className="bg-white p-8 rounded-lg shadow-lg"
-            />
-          </div>         
+            <div className="max-w-3xl mx-auto">
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+                <div className="bg-[var(--red)] h-2 w-full"></div>
+                <div className="p-8 md:p-12">
+                  <DynamicForm
+                    fields={surveyFields}
+                    onSubmit={handleSubmit}
+                    submitText="Enviar Encuesta"
+                    submitClassName="w-full py-4 bg-[var(--red)] text-white font-semibold rounded-lg hover:bg-[#270218] transition-colors duration-300 disabled:opacity-70 text-lg shadow-md hover:shadow-lg"
+                    loadingText="Enviando respuestas..."
+                    successMessage="¡Gracias por su opinión!"
+                    successDescription="Sus respuestas han sido enviadas correctamente. Agradecemos su tiempo y confianza en nuestros servicios."
+                    retryText="Enviar otra respuesta"
+                    className="space-y-6"
+                  />
+                </div>
+              </div>
+            </div>         
           </div>
         </section>       
       </main>
