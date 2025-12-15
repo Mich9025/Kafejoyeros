@@ -8,7 +8,9 @@ import {
 
 // Función base para hacer peticiones a la API de WordPress
 async function fetchWordPressAPI(endpoint: string, options: RequestInit = {}) {
-  const url = `${WORDPRESS_CONFIG.baseUrl}${endpoint}`;
+  const isClient = typeof window !== 'undefined';
+  const baseUrl = isClient ? '/api/proxy/wordpress' : WORDPRESS_CONFIG.baseUrl;
+  const url = `${baseUrl}${endpoint}`;
   
   const defaultOptions: RequestInit = {
     headers: {
@@ -36,7 +38,9 @@ async function fetchWordPressAPI(endpoint: string, options: RequestInit = {}) {
 
 // Función base para hacer peticiones a la API de WordPress con headers
 async function fetchWordPressAPIWithHeaders(endpoint: string, options: RequestInit = {}) {
-  const url = `${WORDPRESS_CONFIG.baseUrl}${endpoint}`;
+  const isClient = typeof window !== 'undefined';
+  const baseUrl = isClient ? '/api/proxy/wordpress' : WORDPRESS_CONFIG.baseUrl;
+  const url = `${baseUrl}${endpoint}`;
   
   const defaultOptions: RequestInit = {
     headers: {
