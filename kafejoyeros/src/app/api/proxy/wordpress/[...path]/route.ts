@@ -62,7 +62,7 @@ export async function GET(
     const response = await fetch(targetUrl, {
       headers: {
         'Content-Type': 'application/json',
-        // 'Authorization': request.headers.get('Authorization') || '', // If we needed auth
+        ...(request.headers.get('Authorization') ? { 'Authorization': request.headers.get('Authorization')! } : {}),
       },
       next: { revalidate: 60 } // Cache proxy responses
     });
