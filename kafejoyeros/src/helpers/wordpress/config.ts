@@ -11,7 +11,7 @@ export interface WordPressACF {
 
 export const WORDPRESS_CONFIG = {
   // Base URL de tu instalación de WordPress
-  baseUrl: process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://yellowgreen-deer-888686.hostingersite.com',
+  baseUrl: process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://api.kafejoyeros.com',
   
   // Endpoints de la API REST de WordPress
   endpoints: {

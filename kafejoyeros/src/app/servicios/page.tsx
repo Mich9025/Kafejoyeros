@@ -69,7 +69,7 @@ export default function ServiciosPage() {
       id: 1,
       title: "Oro del cuál te sentirás orgulloso",
       description: "Opta por piezas elaboradas con metales preciosos extraídos de manera responsable, apoya el crecimiento de mineros artesanales locales y sus familias, y recibe joyas con mayor trazabilidad y menor impacto medio ambiental. Cada decisión consciente puede transformar vidas y proteger el futuro del planeta.",
-      image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Copia-de-Batea-con-oro-Oro-Verde-c-Alejandro-Cock-295-scaled.png",
+      image: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/Copia-de-Batea-con-oro-Oro-Verde-c-Alejandro-Cock-295-scaled.png",
       additionalButtons: [
         {
           text: "Joyería Sostenible",
@@ -87,13 +87,13 @@ export default function ServiciosPage() {
       id: 2,
       title: "Hecho a la medida",
       description: "Enaltecer el trabajo de nuestros artesanos preservando las técnicas heredadas por generaciones y velando porque el oficio perdure en el tiempo, es lo que da verdadero valor a cada una de nuestras piezas. A través de pequeñas producciones y diseños atemporales reafirmamos nuestro compromiso con una joyería responsable, consciente y profundamente humana.",
-      image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/trabajo-artesanal.jpg"
+      image: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/trabajo-artesanal.jpg"
     },
     {
       id: 3,
       title: "Ser joyero por un día",
       description: "Nuestros artesanos no solo trabajan el metal, preservan una tradición viva, cuidando cada detalle con autenticidad y respeto. Y porque creemos que vivir el proceso transforma la manera en que se valora una joya, ofrecemos a nuestros clientes la oportunidad de ser joyeros por un día, una experiencia única para conectar con el origen, participar en la creación y dar forma a una pieza con historia propia",
-      image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/hecho-a-mano.jpg",
+      image: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/hecho-a-mano.jpg",
       additionalButtons: [
         {
           text: "Manos que Hablan",
@@ -105,7 +105,7 @@ export default function ServiciosPage() {
     {
       id: 4,
       title: "Joyería Regenerativa",
-      description: "Creemos que la joyería también puede sanar. Estamos comprometidos con darle un respiro al planeta y devolverle vida a los territorios que han sido impactados por la minería ilegal. Por eso, apoyamos iniciativas como BOSQUE NAGAL y MINGAKURI, que trabajan en la reforestación de zonas degradadas y en el fortalecimiento de comunidades campesinas locales, generando oportunidades sostenibles y restaurando ecosistemas vitales. Cada pieza que creamos no solo busca contar tu historia, sino también ser parte de una historia más grande,  la de una joyería consciente, regenerativa y con propósito. . AMAZONOMÍA",      image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/joyeria-regenerativa.png",
+      description: "Creemos que la joyería también puede sanar. Estamos comprometidos con darle un respiro al planeta y devolverle vida a los territorios que han sido impactados por la minería ilegal. Por eso, apoyamos iniciativas como BOSQUE NAGAL y MINGAKURI, que trabajan en la reforestación de zonas degradadas y en el fortalecimiento de comunidades campesinas locales, generando oportunidades sostenibles y restaurando ecosistemas vitales. Cada pieza que creamos no solo busca contar tu historia, sino también ser parte de una historia más grande,  la de una joyería consciente, regenerativa y con propósito. . AMAZONOMÍA",      image: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/joyeria-regenerativa.png",
       additionalButtons: [
         {
           text: "Instagram",
@@ -118,7 +118,7 @@ export default function ServiciosPage() {
       id: 5,
       title: "Anillos de Compromiso y Boda",
       description: "Los anillos de boda son nuestra especialidad. Te acompañamos en un proceso íntimo y personalizado, desde la elección de los materiales hasta el diseño final de tu pieza, asegurándonos de que cada anillo refleje la historia, estilo y esencia de quien lo va a llevar. Creamos joyas únicas, pensadas para durar toda la vida.",
-      image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/compromiso-foto.jpg",
+      image: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/compromiso-foto.jpg",
       additionalButtons: [
         {
           text: "El Anillo de Compromiso Perfecto",
@@ -160,7 +160,7 @@ export default function ServiciosPage() {
 
   return (
     <>
-      <Header logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-2-JPG-Photoroom.png"} />
+      <Header logo={"https://api.kafejoyeros.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-2-JPG-Photoroom.png"} />
       
       <main className="min-h-screen bg-white">
         {/* Componente hijo envuelto en Suspense para usar useSearchParams sin error */}
@@ -179,7 +179,7 @@ export default function ServiciosPage() {
             className={`absolute inset-0 transition-opacity duration-2000 ease-in-out`}
           >
             <Image
-              src={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-130-scaled.jpg"}
+              src={"https://api.kafejoyeros.com/wp-content/uploads/2025/10/Pic-130-scaled.jpg"}
               alt={"Hero background"}
               fill
               className="object-cover scale-110 animate-slow-zoom"              
@@ -192,7 +192,7 @@ export default function ServiciosPage() {
         {/* Decorative Elements */}
          <div className="absolute top-20 left-20 w-32 h-32 animate-float">
           <Image 
-            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
+            src="https://api.kafejoyeros.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
             alt="Decorative element" 
             fill
             className="w-full h-full object-contain opacity-20 filter brightness-110"
@@ -201,7 +201,7 @@ export default function ServiciosPage() {
         </div>        
         <div className="absolute bottom-32 right-32 w-24 h-24 rotate-12 animate-float" style={{animationDelay: '1s'}}>
         <Image 
-            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
+            src="https://api.kafejoyeros.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
             alt="Decorative element" 
             fill
             className="w-full h-full object-contain opacity-20 filter brightness-110"
@@ -624,7 +624,7 @@ export default function ServiciosPage() {
         )}
       </main>
 
-      <Footer logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-1-JPG-Photoroom.png"} />
+      <Footer logo={"https://api.kafejoyeros.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-1-JPG-Photoroom.png"} />
     </>
   );
 }

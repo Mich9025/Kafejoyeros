@@ -130,7 +130,7 @@ export default function About({
             poster=""
           >
             <source 
-              src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Banner-Horizontal-KAFE-JOYEROS_Pantallas-Principal.mp4" 
+              src="https://api.kafejoyeros.com/wp-content/uploads/2025/10/Banner-Horizontal-KAFE-JOYEROS_Pantallas-Principal.mp4" 
               type="video/mp4" 
             />
             Tu navegador no soporta el elemento de video.
@@ -298,7 +298,7 @@ export default function About({
                   }}
                 >
                   <source 
-                    src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Video-Kafe-Joyeros.mp4" 
+                    src="https://api.kafejoyeros.com/wp-content/uploads/2025/10/Video-Kafe-Joyeros.mp4" 
                     type="video/mp4" 
                   />
                   Tu navegador no soporta el elemento de video.

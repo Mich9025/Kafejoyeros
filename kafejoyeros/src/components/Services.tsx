@@ -22,35 +22,35 @@ export default function Services({
       id: 1,
       title: "Oro del cuál te sentirás orgulloso",
       description: "Opta por piezas elaboradas con metales preciosos extraídos de manera responsable, apoya el crecimiento de mineros artesanales locales y sus familias, y recibe joyas con mayor trazabilidad y menor impacto medio ambiental.",
-      image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Copia-de-Batea-con-oro-Oro-Verde-c-Alejandro-Cock-295-scaled.png",
+      image: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/Copia-de-Batea-con-oro-Oro-Verde-c-Alejandro-Cock-295-scaled.png",
       link: "/servicios?serviceId=1"
     },
     {
       id: 2,
       title: "Hecho a la medida",
       description: "Enaltecer el trabajo de nuestros artesanos preservando las técnicas heredadas por generaciones y velando porque el oficio perdure en el tiempo, es lo que da verdadero valor a cada una de nuestras piezas.",
-      image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/trabajo-artesanal.jpg",
+      image: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/trabajo-artesanal.jpg",
       link: "/servicios?serviceId=2"
     },
     {
       id: 3,
       title: "Ser joyero por un día.",
       description: "Nuestros artesanos no solo trabajan el metal, preservan una tradición viva, cuidando cada detalle con autenticidad y respeto.",
-      image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/hecho-a-mano.jpg",
+      image: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/hecho-a-mano.jpg",
       link: "/servicios?serviceId=3"
     },
     {
       id: 4,
       title: "Hagamos juntos parte de una joyería regenerativa",
       description: "Creemos que la joyería también puede sanar. Estamos comprometidos con darle un respiro al planeta y devolverle vida a los territorios que han sido impactados por la minería ilegal.",
-      image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/joyeria-regenerativa.png",
+      image: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/joyeria-regenerativa.png",
       link: "/servicios?serviceId=4"
     },
     {
       id: 5,
       title: "Nuestro compromiso es hacer el tuyo inolvidable",
       description: "Los anillos de boda son nuestra especialidad. Te acompañamos en un proceso íntimo y personalizado, desde la elección de los materiales hasta el diseño final de tu pieza, asegurándonos de que cada anillo refleje la historia, estilo y esencia de quien lo va a llevar.",
-      image: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/compromiso-foto.jpg",
+      image: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/compromiso-foto.jpg",
       link: "/servicios?serviceId=5"
     }
   ]

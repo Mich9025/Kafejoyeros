@@ -10,7 +10,7 @@ import Footer from '@/components/Footer';
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Header logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-2-JPG-Photoroom.png"} />
+      <Header logo={"https://api.kafejoyeros.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-2-JPG-Photoroom.png"} />
       <Hero />
       <About />
       <Services />
@@ -21,7 +21,7 @@ export default function Home() {
       <Banner />      
       {/* <LocationMap /> */}
       {/*<Contact />*/}
-      <Footer logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-1-JPG-Photoroom.png"} />
+      <Footer logo={"https://api.kafejoyeros.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-1-JPG-Photoroom.png"} />
     </main>
   );
 }

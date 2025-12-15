@@ -31,7 +31,7 @@ export default function Gallery({
         console.log('Starting to fetch images...');
         
         const response = await fetch(
-          'https://yellowgreen-deer-888686.hostingersite.com/wp-json/filebird/public/v1/attachment-id/?folder_id=6',
+          'https://api.kafejoyeros.com/wp-json/filebird/public/v1/attachment-id/?folder_id=6',
           {
             headers: {
               'Authorization': 'Bearer rcHPRPFiUjqRtQlESWQhQCcHagZ3EosAJzm5LugJ',
@@ -58,7 +58,7 @@ export default function Gallery({
           console.log('Fetching image details for ID:', id);
           
           const imageResponse = await fetch(
-            `https://yellowgreen-deer-888686.hostingersite.com/wp-json/wp/v2/media/${id}`,
+            `https://api.kafejoyeros.com/wp-json/wp/v2/media/${id}`,
             {
               headers: {
                 'Authorization': 'Bearer rcHPRPFiUjqRtQlESWQhQCcHagZ3EosAJzm5LugJ',

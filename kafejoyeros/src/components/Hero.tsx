@@ -19,13 +19,13 @@ interface HeroProps {
 }
 
 export default function Hero({
-  logoUrl = "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-2-JPG-Photoroom.png",
+  logoUrl = "https://api.kafejoyeros.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-2-JPG-Photoroom.png",
   subtitle = "Lujo consciente hecho a mano en Colombia.",
   description = "Piezas atemporales que entrelazan historias con propósito y celebran la maestría artesanal.",
   backgroundImages = [
-    "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-113-scaled.jpg",
-    "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/0DBD3315-D87C-4ED7-83F6-3D4F1BF6354B.jpg",
-    "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-75-scaled.jpg"
+    "https://api.kafejoyeros.com/wp-content/uploads/2025/10/Pic-113-scaled.jpg",
+    "https://api.kafejoyeros.com/wp-content/uploads/2025/10/0DBD3315-D87C-4ED7-83F6-3D4F1BF6354B.jpg",
+    "https://api.kafejoyeros.com/wp-content/uploads/2025/10/Pic-75-scaled.jpg"
   ],
   primaryCTA = { text: "Explorar Editorial", href: "/editorial" },
   secondaryCTA = { text: "Contacta con nosotros", href: "/contacto" }
@@ -69,7 +69,7 @@ export default function Hero({
         {/* Decorative Elements */}
         <div className="absolute top-20 left-20 w-32 h-32 animate-float">
           <Image 
-            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
+            src="https://api.kafejoyeros.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
             alt="Decorative element" 
             fill
             className="w-full h-full object-contain opacity-20 filter brightness-110"
@@ -78,7 +78,7 @@ export default function Hero({
         </div>
         <div className="absolute bottom-32 right-32 w-24 h-24 animate-float" style={{animationDelay: '1s'}}>
           <Image
-            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
+            src="https://api.kafejoyeros.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
             alt="Decorative element" 
             fill
             className="w-full h-full object-contain opacity-20 rotate-12"
@@ -87,7 +87,7 @@ export default function Hero({
         </div>
         {/* <div className="absolute top-1/2 left-10 w-16 h-20 animate-float" style={{animationDelay: '0.5s'}}>
           <Image 
-            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
+            src="https://api.kafejoyeros.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
             alt="Decorative element" 
             fill
             className="w-full h-full object-contain opacity-50"
@@ -96,7 +96,7 @@ export default function Hero({
         </div>
         <div className="absolute top-1/3 right-16 w-12 h-32 animate-float" style={{animationDelay: '1.5s'}}>
           <Image 
-            src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
+            src="https://api.kafejoyeros.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
             alt="Decorative element" 
             fill
             className="w-full h-full object-contain opacity-40"

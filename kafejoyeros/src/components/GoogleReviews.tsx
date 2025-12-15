@@ -30,7 +30,7 @@ export default function GoogleReviews({
     {
       id: "1",
       name: "María González",
-      avatar: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg",
+      avatar: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg",
       rating: 5,
       date: "2024-01-15",
       text: "Increíble experiencia. El anillo de compromiso que diseñaron para mí superó todas mis expectativas. La atención al detalle y la calidad son excepcionales. Definitivamente recomiendo Kafe Joyeros.",
@@ -39,7 +39,7 @@ export default function GoogleReviews({
     {
       id: "2",
       name: "Carlos Rodríguez",
-      avatar: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg",
+      avatar: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg",
       rating: 5,
       date: "2024-01-12",
       text: "Servicio personalizado de primera clase. Me ayudaron a crear un collar único para mi esposa y el resultado fue perfecto. El equipo es muy profesional y conocedor.",
@@ -48,7 +48,7 @@ export default function GoogleReviews({
     {
       id: "3",
       name: "Ana Martínez",
-      avatar: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg",
+      avatar: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg",
       rating: 5,
       date: "2024-01-10",
       text: "La mejor joyería de la ciudad. Compré unos aretes de esmeraldas y la calidad es impresionante. Además, el precio fue muy justo para la calidad recibida.",
@@ -57,7 +57,7 @@ export default function GoogleReviews({
     {
       id: "4",
       name: "Luis Fernández",
-      avatar: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg",
+      avatar: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg",
       rating: 4,
       date: "2024-01-08",
       text: "Excelente trabajo en la reparación de una joya familiar. Muy cuidadosos con las piezas antiguas y el resultado fue perfecto. Volveré sin duda.",
@@ -66,7 +66,7 @@ export default function GoogleReviews({
     {
       id: "5",
       name: "Isabella Torres",
-      avatar: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg",
+      avatar: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg",
       rating: 5,
       date: "2024-01-05",
       text: "Diseño personalizado increíble. Trabajaron conmigo para crear exactamente lo que tenía en mente. El proceso fue transparente y el resultado superó mis expectativas.",
@@ -75,7 +75,7 @@ export default function GoogleReviews({
     {
       id: "6",
       name: "Roberto Silva",
-      avatar: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg",
+      avatar: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg",
       rating: 5,
       date: "2024-01-03",
       text: "Atención excepcional y productos de alta calidad. Me asesoraron perfectamente para elegir el regalo ideal. Muy satisfecho con la compra.",
@@ -188,7 +188,7 @@ export default function GoogleReviews({
           <div className="flex items-center justify-center gap-6 mb-8">
             <div className="flex items-center gap-3 bg-white/60 backdrop-blur-lg rounded-2xl px-6 py-4 border border-[#510031]">
               <Image
-                src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg"
+                src="https://api.kafejoyeros.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg"
                 alt="Google"
                 width={40}
                 height={40}
@@ -228,7 +228,7 @@ export default function GoogleReviews({
                     <div className="flex items-start gap-4 mb-4">
                       <div className="relative">
                         <Image
-                          src={review.avatar || "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg"}
+                          src={review.avatar || "https://api.kafejoyeros.com/wp-content/uploads/2025/10/Pic-47-scaled.jpg"}
                           alt={review.name}
                           width={60}
                           height={60}

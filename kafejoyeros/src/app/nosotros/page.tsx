@@ -22,7 +22,7 @@ export default function NosotrosPage() {
 
   return (
     <>
-      <Header logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-2-JPG-Photoroom.png"} />
+      <Header logo={"https://api.kafejoyeros.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-2-JPG-Photoroom.png"} />
       <main className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -36,12 +36,12 @@ export default function NosotrosPage() {
             className="w-full h-full object-cover"
           >
             <source
-              src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Video-Kafe-Joyeros.mp4"
+              src="https://api.kafejoyeros.com/wp-content/uploads/2025/10/Video-Kafe-Joyeros.mp4"
               type="video/mp4"
             />
             {/* Fallback image if video fails to load */}
             <Image
-              src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Banner-esp_5-scaled.png"
+              src="https://api.kafejoyeros.com/wp-content/uploads/2025/10/Banner-esp_5-scaled.png"
               alt="Kafé Joyeros - Nosotros"
               fill
               className="object-cover"
@@ -114,7 +114,7 @@ export default function NosotrosPage() {
                   {/* Imagen principal - ocupa toda la columna izquierda */}
                   <div className="relative overflow-hidden rounded-2xl shadow-xl">
                     <Image
-                      src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-112-scaled.jpg"
+                      src="https://api.kafejoyeros.com/wp-content/uploads/2025/10/Pic-112-scaled.jpg"
                       alt="Joyería regenerativa"
                       width={1000}
                       height={500}
@@ -126,7 +126,7 @@ export default function NosotrosPage() {
                   {/* <div className="flex flex-col gap-4">
                     <div className="relative overflow-hidden rounded-xl shadow-lg flex-1">
                       <Image
-                        src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-113-scaled.jpg"
+                        src="https://api.kafejoyeros.com/wp-content/uploads/2025/10/Pic-113-scaled.jpg"
                         alt="Proceso artesanal"
                         width={300}
                         height={150}
@@ -136,7 +136,7 @@ export default function NosotrosPage() {
                     
                     <div className="relative overflow-hidden rounded-xl shadow-lg flex-1">
                       <Image
-                        src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Pic-75-scaled.jpg"
+                        src="https://api.kafejoyeros.com/wp-content/uploads/2025/10/Pic-75-scaled.jpg"
                         alt="Artesanos trabajando"
                         width={300}
                         height={150}
@@ -146,7 +146,7 @@ export default function NosotrosPage() {
                     
                     <div className="relative overflow-hidden rounded-xl shadow-lg flex-1">
                       <Image
-                        src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/0DBD3315-D87C-4ED7-83F6-3D4F1BF6354B.jpg"
+                        src="https://api.kafejoyeros.com/wp-content/uploads/2025/10/0DBD3315-D87C-4ED7-83F6-3D4F1BF6354B.jpg"
                         alt="Joyería artesanal"
                         width={300}
                         height={150}
@@ -193,7 +193,7 @@ export default function NosotrosPage() {
               <div className="lg:order-1 relative">
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white p-8">
                   <Image
-                    src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Fairmined-Marcas-licenciatarias-2.png"
+                    src="https://api.kafejoyeros.com/wp-content/uploads/2025/10/Fairmined-Marcas-licenciatarias-2.png"
                     alt="Certificación Fairmined"
                     width={400}
                     height={200}
@@ -311,13 +311,13 @@ export default function NosotrosPage() {
                   <div 
                     className="relative overflow-hidden rounded-xl shadow-lg cursor-pointer group row-span-2"
                     onClick={() => setSelectedImage({
-                      src: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/compromiso-foto.jpg",
+                      src: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/compromiso-foto.jpg",
                       alt: "Compromiso artesanal",
                       title: "Nuestro Compromiso"
                     })}
                   >
                     <Image
-                      src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/compromiso-foto.jpg"
+                      src="https://api.kafejoyeros.com/wp-content/uploads/2025/10/compromiso-foto.jpg"
                       alt="Compromiso artesanal"
                       width={300}
                       height={500}
@@ -336,13 +336,13 @@ export default function NosotrosPage() {
                     <div 
                       className="relative overflow-hidden rounded-lg shadow-md cursor-pointer group"
                       onClick={() => setSelectedImage({
-                        src: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/trabajo-artesanal.jpg",
+                        src: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/trabajo-artesanal.jpg",
                         alt: "Trabajo artesanal",
                         title: "Trabajo Artesanal"
                       })}
                     >
                       <Image
-                        src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/trabajo-artesanal.jpg"
+                        src="https://api.kafejoyeros.com/wp-content/uploads/2025/10/trabajo-artesanal.jpg"
                         alt="Trabajo artesanal"
                         width={300}
                         height={120}
@@ -358,13 +358,13 @@ export default function NosotrosPage() {
                     <div 
                       className="relative overflow-hidden rounded-lg shadow-md cursor-pointer group"
                       onClick={() => setSelectedImage({
-                        src: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/hecho-a-mano.jpg",
+                        src: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/hecho-a-mano.jpg",
                         alt: "Hecho a mano",
                         title: "Hecho a Mano"
                       })}
                     >
                       <Image
-                        src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/hecho-a-mano.jpg"
+                        src="https://api.kafejoyeros.com/wp-content/uploads/2025/10/hecho-a-mano.jpg"
                         alt="Hecho a mano"
                         width={300}
                         height={120}
@@ -382,13 +382,13 @@ export default function NosotrosPage() {
                   {/* <div 
                     className="relative overflow-hidden rounded-lg shadow-md cursor-pointer group"
                     onClick={() => setSelectedImage({
-                      src: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Copia-de-Batea-con-oro-Oro-Verde-c-Alejandro-Cock-295-scaled.png",
+                      src: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/Copia-de-Batea-con-oro-Oro-Verde-c-Alejandro-Cock-295-scaled.png",
                       alt: "Oro responsable",
                       title: "Oro Responsable"
                     })}
                   >
                     <Image
-                      src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Copia-de-Batea-con-oro-Oro-Verde-c-Alejandro-Cock-295-scaled.png"
+                      src="https://api.kafejoyeros.com/wp-content/uploads/2025/10/Copia-de-Batea-con-oro-Oro-Verde-c-Alejandro-Cock-295-scaled.png"
                       alt="Oro responsable"
                       width={300}
                       height={120}
@@ -404,13 +404,13 @@ export default function NosotrosPage() {
                   {/* <div 
                     className="relative overflow-hidden rounded-lg shadow-md cursor-pointer group"
                     onClick={() => setSelectedImage({
-                      src: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/joyeria-regenerativa.png",
+                      src: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/joyeria-regenerativa.png",
                       alt: "Joyería regenerativa",
                       title: "Joyería Regenerativa"
                     })}
                   >
                     <Image
-                      src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/joyeria-regenerativa.png"
+                      src="https://api.kafejoyeros.com/wp-content/uploads/2025/10/joyeria-regenerativa.png"
                       alt="Joyería regenerativa"
                       width={300}
                       height={120}
@@ -447,7 +447,7 @@ export default function NosotrosPage() {
             <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
               <div className="mb-4">
                 <Image
-                  src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Fairmined-Marcas-licenciatarias-2.png"
+                  src="https://api.kafejoyeros.com/wp-content/uploads/2025/10/Fairmined-Marcas-licenciatarias-2.png"
                   alt="Fairmined"
                   width={250
 
@@ -464,7 +464,7 @@ export default function NosotrosPage() {
             <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
               <div className="mb-4">
                 <Image
-                  src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/RSP160011Retailer-Lock-Up-V1-PRINT-8-5x11-V2-03-1-scaled.png"
+                  src="https://api.kafejoyeros.com/wp-content/uploads/2025/10/RSP160011Retailer-Lock-Up-V1-PRINT-8-5x11-V2-03-1-scaled.png"
                   alt="Diamantes GIA"
                   width={250}
                   height={60}
@@ -479,7 +479,7 @@ export default function NosotrosPage() {
             <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
               <div className="mb-4">
                 <Image
-                  src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/free-diamond-icon.png"
+                  src="https://api.kafejoyeros.com/wp-content/uploads/2025/10/free-diamond-icon.png"
                   alt="Esmeraldas"
                   width={420}
                   height={60}
@@ -505,7 +505,7 @@ export default function NosotrosPage() {
             className="w-full h-full object-cover"
           >
             <source
-              src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Banner-Horizontal-KAFE-JOYEROS_Pantallas-Principal.mp4"
+              src="https://api.kafejoyeros.com/wp-content/uploads/2025/10/Banner-Horizontal-KAFE-JOYEROS_Pantallas-Principal.mp4"
               type="video/mp4"
             />
             {/* Fallback background if video fails to load */}
@@ -541,7 +541,7 @@ export default function NosotrosPage() {
         </div>
       </section>
     </main>
-    <Footer logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-2-JPG-Photoroom.png"} />
+    <Footer logo={"https://api.kafejoyeros.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-2-JPG-Photoroom.png"} />
     
     {/* Modal para imágenes ampliadas */}
     {selectedImage && (

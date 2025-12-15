@@ -55,7 +55,7 @@ export default function PrivacidadDeDatosPage() {
   return (
     <>
     
-      <Header darkBackground={true} logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-2-JPG-Photoroom.png"} />
+      <Header darkBackground={true} logo={"https://api.kafejoyeros.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-2-JPG-Photoroom.png"} />
     
     <div className="min-h-screen bg-white">              
       <main className="pt-24">
@@ -157,7 +157,7 @@ export default function PrivacidadDeDatosPage() {
         )}
       </main>
 
-      <Footer logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-1-JPG-Photoroom.png"} />   
+      <Footer logo={"https://api.kafejoyeros.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-1-JPG-Photoroom.png"} />   
     </div>
     </>
   );

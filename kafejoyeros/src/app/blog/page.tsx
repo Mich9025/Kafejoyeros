@@ -94,7 +94,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <Header logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-2-JPG-Photoroom.png"} />
+      <Header logo={"https://api.kafejoyeros.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-2-JPG-Photoroom.png"} />
       
       <main className="min-h-screen bg-white">
         {/* Hero Section */}
@@ -107,7 +107,7 @@ export default function BlogPage() {
             className={`absolute inset-0 transition-opacity duration-2000 ease-in-out`}
           >
             <Image
-              src={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/piedras-certificadas.jpg"}
+              src={"https://api.kafejoyeros.com/wp-content/uploads/2025/10/piedras-certificadas.jpg"}
               alt={"Hero background"}
               fill
               unoptimized={true}
@@ -121,7 +121,7 @@ export default function BlogPage() {
         {/* Decorative Elements */}
         <div className="absolute top-20 left-20 w-32 h-32 animate-float">
                   <Image 
-                    src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
+                    src="https://api.kafejoyeros.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
                     alt="Decorative element" 
                     fill
                     className="w-full h-full object-contain opacity-20 filter brightness-110"
@@ -130,7 +130,7 @@ export default function BlogPage() {
                 </div>         
                 <div className="absolute bottom-32 right-32 w-24 h-24 rotate-12 animate-float" style={{animationDelay: '1s'}}>
                 <Image 
-                    src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
+                    src="https://api.kafejoyeros.com/wp-content/uploads/2025/11/ICONO-2-PNG-scaled.png" 
                     alt="Decorative element" 
                     fill
                     className="w-full h-full object-contain opacity-20 filter brightness-110"
@@ -337,7 +337,7 @@ export default function BlogPage() {
         </section>
       </main>
 
-      <Footer logo={"https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-1-JPG-Photoroom.png"} />
+      <Footer logo={"https://api.kafejoyeros.com/wp-content/uploads/2025/10/NOMBRE-SLOGAN-COLOR-1-JPG-Photoroom.png"} />
     </>
   );
 }

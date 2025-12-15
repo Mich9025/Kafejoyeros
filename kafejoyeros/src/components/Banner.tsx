@@ -24,19 +24,19 @@ export default function Banner({
     {
       id: 1,
       name: "Fairmined",
-      logo: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Fairmined-Marcas-licenciatarias-2.png",
+      logo: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/Fairmined-Marcas-licenciatarias-2.png",
       description: "Oro responsable y ético"
     },
     {
       id: 2,
       name: "Bosque Nagal",
-      logo: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Copia-de-LOGO-BOSQUE-NAGAL.png",
+      logo: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/Copia-de-LOGO-BOSQUE-NAGAL.png",
       description: "Compromiso ambiental"
     },
     {
       id: 3,
       name: "Certificación Artesanal",
-      logo: "https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/RSP160011Retailer-Lock-Up-V1-PRINT-8-5x11-V2-03-1-scaled.png",
+      logo: "https://api.kafejoyeros.com/wp-content/uploads/2025/10/RSP160011Retailer-Lock-Up-V1-PRINT-8-5x11-V2-03-1-scaled.png",
       description: "Calidad artesanal garantizada",
       className: "invert"
     }
@@ -53,7 +53,7 @@ export default function Banner({
       {/* Banner Background Image */}
       <div className="relative">
         <Image
-          src="https://yellowgreen-deer-888686.hostingersite.com/wp-content/uploads/2025/10/Banner-esp_5-scaled.png"
+          src="https://api.kafejoyeros.com/wp-content/uploads/2025/10/Banner-esp_5-scaled.png"
           alt="Banner Kafé Joyeros"
           width={1920}
           height={600}

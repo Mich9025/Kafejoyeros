@@ -17,7 +17,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'yellowgreen-deer-888686.hostingersite.com',
+        hostname: 'api.kafejoyeros.com',
         port: '',
         pathname: '/**',
       },
