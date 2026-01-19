@@ -5,12 +5,11 @@ export async function POST(request: Request) {
     const data = await request.json();
     
     // Server-side environment variables (no NEXT_PUBLIC_ prefix)
-    const serviceId = process.env.EMAILJS_SERVICE_ID;
-    const templateId = process.env.EMAILJS_TEMPLATE_ID;
-    const publicKey = process.env.EMAILJS_PUBLIC_KEY;
-    const privateKey = process.env.EMAILJS_PRIVATE_KEY;
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
-    if (!serviceId || !templateId || !publicKey || !privateKey) {
+    if (!serviceId || !templateId || !publicKey) {
       return NextResponse.json(
         { error: 'Configuration Error: Missing EmailJS credentials on server' }, 
         { status: 500 }
@@ -21,7 +20,6 @@ export async function POST(request: Request) {
       service_id: serviceId,
       template_id: templateId,
       user_id: publicKey,
-      accessToken: privateKey,
       template_params: data
     };
 

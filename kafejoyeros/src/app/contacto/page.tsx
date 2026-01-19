@@ -1,5 +1,5 @@
 "use client";
-
+import emailjs from '@emailjs/browser';
 
 import { DynamicForm } from "@/components/ui/dynamic-form";
 import { z } from "zod";
@@ -394,6 +394,16 @@ export default function ContactoPage() {
     try {
       console.log("Datos del formulario:", data);
       
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
+
+      if (!templateId || !publicKey || templateId.includes('YOUR_TEMPLATE_ID') || publicKey.includes('YOUR_PUBLIC_KEY')) {
+        console.warn("EmailJS credentials invalid or missing. Check .env.local");
+        alert("Configuración de Email incompleta. Por favor revisa la consola.");
+        return;
+      }
+      
       const templateParams = {
         from_name: data.nombre,
         user_email: data.email,
@@ -406,17 +416,7 @@ export default function ContactoPage() {
         referral: data.como_nos_conociste || "No especificado"
       };
 
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(templateParams),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to send email');
-      }
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
       
       alert("¡Gracias por contactarnos! Te responderemos pronto.");
     } catch (error) {
