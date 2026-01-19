@@ -3,6 +3,8 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { DynamicForm } from '@/components/ui/dynamic-form';
+import emailjs from '@emailjs/browser';
+
 
 export default function EncuestaPage() { 
   const surveyFields = [    
@@ -70,17 +72,47 @@ export default function EncuestaPage() {
 
   const handleSubmit = async (data: Record<string, string | boolean | File | number | null>) => {
     try {
-      const response = await fetch('/api/survey', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
-      if (!response.ok) {
-        throw new Error('Error al enviar la encuesta');
+      if (!templateId || !publicKey || templateId.includes('YOUR_TEMPLATE_ID') || publicKey.includes('YOUR_PUBLIC_KEY')) {
+        console.warn("EmailJS credentials invalid or missing. Check .env.local");
+        alert("Configuración de Email incompleta. Por favor revisa la consola.");
+        return;
       }
+
+      // Format the survey data into the message field
+      const formattedMessage = `
+Encuesta de Satisfacción:
+Calificación: ${data.calificacion || 'No especificada'}
+
+1. ¿Recuerda por qué eligió trabajar con nosotros por primera vez?
+${data.pregunta1 || 'Sin respuesta'}
+
+2. Sabiendo que hay otras opciones en el mercado, ¿alguna razón en especial por la que continúe trabajando con nosotros?
+${data.pregunta2 || 'Sin respuesta'}
+
+3. ¿Considera que hay algo que nos diferencie de las demás opciones del mercado?
+${data.pregunta3 || 'Sin respuesta'}
+
+4. ¿Alguna vez nos ha recomendado? de ser así, ¿alguna razón en particular?
+${data.pregunta4 || 'Sin respuesta'}
+      `.trim();
+
+      const templateParams = {
+        from_name: "Encuesta Anónima",
+        user_email: "no-reply@kafejoyeros.com",
+        form: "Encuesta",
+        message: formattedMessage,
+        phone: "N/A",
+        location: "N/A",
+        budget: "N/A",
+        contact_preference: "N/A",
+        referral: "Encuesta"
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
       
       // El componente DynamicForm manejará el mensaje de éxito
     } catch (error) {

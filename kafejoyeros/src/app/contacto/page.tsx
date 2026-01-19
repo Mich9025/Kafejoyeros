@@ -1,4 +1,5 @@
 "use client";
+import emailjs from '@emailjs/browser';
 
 import { DynamicForm } from "@/components/ui/dynamic-form";
 import { z } from "zod";
@@ -387,16 +388,36 @@ export default function ContactoPage() {
     como_nos_conociste: z.string().optional(),
   });
 
+
   // Handle form submission
   const handleSubmit = async (data: z.infer<typeof formSchema>) => {
     try {
       console.log("Datos del formulario:", data);
       
-      // Here you would typically send the data to your backend
-      // For now, we'll just simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      const serviceId = process.env.EMAILJS_SERVICE_ID!;
+      const templateId = process.env.EMAILJS_TEMPLATE_ID!;
+      const publicKey = process.env.EMAILJS_PUBLIC_KEY!;
+
+      if (!templateId || !publicKey || templateId.includes('YOUR_TEMPLATE_ID') || publicKey.includes('YOUR_PUBLIC_KEY')) {
+        console.warn("EmailJS credentials invalid or missing. Check .env.local");
+        alert("Configuración de Email incompleta. Por favor revisa la consola.");
+        return;
+      }
       
-      // You can integrate with your preferred email service or backend API here
+      const templateParams = {
+        from_name: data.nombre,
+        user_email: data.email,
+        form: "Contacto",
+        message: data.preguntas || "Sin mensaje adicional",
+        phone: data.telefono,
+        location: data.ubicacion,
+        budget: data.presupuesto,
+        contact_preference: data.contacto_preferido,
+        referral: data.como_nos_conociste || "No especificado"
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
       alert("¡Gracias por contactarnos! Te responderemos pronto.");
     } catch (error) {
       console.error("Error al enviar el formulario:", error);
