@@ -618,7 +618,7 @@ export default function ContactoPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/57XXXXXXXXX"
+              href="https://wa.me/573153587484"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[var(--red)] hover:bg-[var(--red)] transition-colors"

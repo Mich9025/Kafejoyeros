@@ -325,7 +325,7 @@ export default function GoogleReviews({
             </p> */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="#contacto"
+                href="/contacto"
                 className="bg-button hover:bg-button-green px-8 py-4 text-white font-tai-lue font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Solicitar Consulta
